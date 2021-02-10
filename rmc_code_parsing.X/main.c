@@ -67,6 +67,8 @@ void main(void)
     //INTERRUPT_PeripheralInterruptDisable();
     
     int i = 0;
+    
+    // Test line
     while (1)
     {
         // Add your application code
