@@ -11876,20 +11876,17 @@ int readBuffer(char *ptr[], int nth);
 
 
 
-char intToAscii(uint16_t number) {
-   return '0' + number;
-}
-void uitoa(uint16_t Value, uint8_t* Buffer)
+
+void parsing(uint16_t Value, uint8_t* Buffer, int char_counter)
 {
     uint8_t i;
     _Bool Printed = 0;
 
     if(Value)
     {
-
         *Buffer++ = Value;
         Printed = 1;
-
+# 79 "main.c"
     }
     else
     {
@@ -11898,22 +11895,29 @@ void uitoa(uint16_t Value, uint8_t* Buffer)
 
     *Buffer = '\0';
 }
+# 98 "main.c"
 void main(void)
 {
 
     SYSTEM_Initialize();
-# 100 "main.c"
+# 118 "main.c"
     int i = 0;
+    int char_counter = 0;
 
+    while (1){
 
-    while (1)
-    {
 
         uint16_t read = EUSART1_Read();
         uint8_t Buffer[10];
-        uitoa(read, Buffer);
-        printf(Buffer);
-        EUSART2_Write(read);
-# 124 "main.c"
+        parsing(read, Buffer, char_counter);
+
+        if(*strchr(Buffer, '\n') == '\n'){
+            printf("The end.");
+            break;
+        }
+        if(*strchr(Buffer, '$') == '$'){
+            printf("This is a valid sentence that starts with: %c!\r\n", *strchr(Buffer, '$'));
+        }
+# 151 "main.c"
     }
 }

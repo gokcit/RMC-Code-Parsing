@@ -11551,9 +11551,9 @@ extern __bank0 __bit __timeout;
 # 50 "mcc_generated_files/mcc.h" 2
 
 # 1 "mcc_generated_files/pin_manager.h" 1
-# 102 "mcc_generated_files/pin_manager.h"
+# 126 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 114 "mcc_generated_files/pin_manager.h"
+# 138 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
 # 51 "mcc_generated_files/mcc.h" 2
 
@@ -11766,11 +11766,44 @@ void EUSART1_SetOverrunErrorHandler(void (* interruptHandler)(void));
 # 398 "mcc_generated_files/eusart1.h"
 void EUSART1_SetErrorHandler(void (* interruptHandler)(void));
 # 55 "mcc_generated_files/mcc.h" 2
-# 70 "mcc_generated_files/mcc.h"
+
+# 1 "mcc_generated_files/eusart2.h" 1
+# 75 "mcc_generated_files/eusart2.h"
+typedef union {
+    struct {
+        unsigned perr : 1;
+        unsigned ferr : 1;
+        unsigned oerr : 1;
+        unsigned reserved : 5;
+    };
+    uint8_t status;
+}eusart2_status_t;
+# 110 "mcc_generated_files/eusart2.h"
+void EUSART2_Initialize(void);
+# 158 "mcc_generated_files/eusart2.h"
+_Bool EUSART2_is_tx_ready(void);
+# 206 "mcc_generated_files/eusart2.h"
+_Bool EUSART2_is_rx_ready(void);
+# 253 "mcc_generated_files/eusart2.h"
+_Bool EUSART2_is_tx_done(void);
+# 301 "mcc_generated_files/eusart2.h"
+eusart2_status_t EUSART2_get_last_status(void);
+# 321 "mcc_generated_files/eusart2.h"
+uint8_t EUSART2_Read(void);
+# 341 "mcc_generated_files/eusart2.h"
+void EUSART2_Write(uint8_t txData);
+# 361 "mcc_generated_files/eusart2.h"
+void EUSART2_SetFramingErrorHandler(void (* interruptHandler)(void));
+# 379 "mcc_generated_files/eusart2.h"
+void EUSART2_SetOverrunErrorHandler(void (* interruptHandler)(void));
+# 397 "mcc_generated_files/eusart2.h"
+void EUSART2_SetErrorHandler(void (* interruptHandler)(void));
+# 56 "mcc_generated_files/mcc.h" 2
+# 71 "mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
-# 83 "mcc_generated_files/mcc.h"
+# 84 "mcc_generated_files/mcc.h"
 void OSCILLATOR_Initialize(void);
-# 96 "mcc_generated_files/mcc.h"
+# 97 "mcc_generated_files/mcc.h"
 void PMD_Initialize(void);
 # 47 "mcc_generated_files/mcc.c" 2
 
@@ -11782,6 +11815,7 @@ void SYSTEM_Initialize(void)
     PIN_MANAGER_Initialize();
     OSCILLATOR_Initialize();
     EUSART1_Initialize();
+    EUSART2_Initialize();
 }
 
 void OSCILLATOR_Initialize(void)

@@ -1,4 +1,4 @@
-# 1 "mcc_generated_files/pin_manager.c"
+# 1 "mcc_generated_files/eusart2.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,10 +6,10 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "mcc_generated_files/pin_manager.c" 2
-# 49 "mcc_generated_files/pin_manager.c"
-# 1 "mcc_generated_files/pin_manager.h" 1
-# 54 "mcc_generated_files/pin_manager.h"
+# 1 "mcc_generated_files/eusart2.c" 2
+# 50 "mcc_generated_files/eusart2.c"
+# 1 "mcc_generated_files/eusart2.h" 1
+# 54 "mcc_generated_files/eusart2.h"
 # 1 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -11545,75 +11545,156 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\\pic\\include\\xc.h" 2 3
-# 54 "mcc_generated_files/pin_manager.h" 2
-# 126 "mcc_generated_files/pin_manager.h"
-void PIN_MANAGER_Initialize (void);
-# 138 "mcc_generated_files/pin_manager.h"
-void PIN_MANAGER_IOC(void);
-# 49 "mcc_generated_files/pin_manager.c" 2
+# 54 "mcc_generated_files/eusart2.h" 2
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdbool.h" 1 3
+# 55 "mcc_generated_files/eusart2.h" 2
+# 75 "mcc_generated_files/eusart2.h"
+typedef union {
+    struct {
+        unsigned perr : 1;
+        unsigned ferr : 1;
+        unsigned oerr : 1;
+        unsigned reserved : 5;
+    };
+    uint8_t status;
+}eusart2_status_t;
+# 110 "mcc_generated_files/eusart2.h"
+void EUSART2_Initialize(void);
+# 158 "mcc_generated_files/eusart2.h"
+_Bool EUSART2_is_tx_ready(void);
+# 206 "mcc_generated_files/eusart2.h"
+_Bool EUSART2_is_rx_ready(void);
+# 253 "mcc_generated_files/eusart2.h"
+_Bool EUSART2_is_tx_done(void);
+# 301 "mcc_generated_files/eusart2.h"
+eusart2_status_t EUSART2_get_last_status(void);
+# 321 "mcc_generated_files/eusart2.h"
+uint8_t EUSART2_Read(void);
+# 341 "mcc_generated_files/eusart2.h"
+void EUSART2_Write(uint8_t txData);
+# 361 "mcc_generated_files/eusart2.h"
+void EUSART2_SetFramingErrorHandler(void (* interruptHandler)(void));
+# 379 "mcc_generated_files/eusart2.h"
+void EUSART2_SetOverrunErrorHandler(void (* interruptHandler)(void));
+# 397 "mcc_generated_files/eusart2.h"
+void EUSART2_SetErrorHandler(void (* interruptHandler)(void));
+# 50 "mcc_generated_files/eusart2.c" 2
+
+
+volatile eusart2_status_t eusart2RxLastError;
 
 
 
 
 
+void (*EUSART2_FramingErrorHandler)(void);
+void (*EUSART2_OverrunErrorHandler)(void);
+void (*EUSART2_ErrorHandler)(void);
 
-void PIN_MANAGER_Initialize(void)
+void EUSART2_DefaultFramingErrorHandler(void);
+void EUSART2_DefaultOverrunErrorHandler(void);
+void EUSART2_DefaultErrorHandler(void);
+
+void EUSART2_Initialize(void)
 {
 
 
 
-    LATA = 0x00;
-    LATB = 0x00;
-    LATC = 0x00;
+    BAUD2CON = 0x08;
 
 
+    RC2STA = 0x90;
 
 
-    TRISA = 0x37;
-    TRISB = 0x70;
-    TRISC = 0xFE;
+    TX2STA = 0x24;
 
 
+    SP2BRGL = 0x19;
 
 
-    ANSELC = 0xFD;
-    ANSELB = 0xD0;
-    ANSELA = 0x37;
+    SP2BRGH = 0x00;
 
 
+    EUSART2_SetFramingErrorHandler(EUSART2_DefaultFramingErrorHandler);
+    EUSART2_SetOverrunErrorHandler(EUSART2_DefaultOverrunErrorHandler);
+    EUSART2_SetErrorHandler(EUSART2_DefaultErrorHandler);
 
+    eusart2RxLastError.status = 0;
 
-    WPUB = 0x00;
-    WPUA = 0x00;
-    WPUC = 0x00;
-
-
-
-
-    ODCONA = 0x00;
-    ODCONB = 0x00;
-    ODCONC = 0x00;
-
-
-
-
-    SLRCONA = 0x1F;
-    SLRCONB = 0x00;
-    SLRCONC = 0x3F;
-
-
-
-
-    INLVLA = 0x3F;
-    INLVLB = 0x00;
-    INLVLC = 0x3F;
-# 113 "mcc_generated_files/pin_manager.c"
-    RC0PPS = 0x11;
-    RB7PPS = 0x0F;
-    RX2DTPPS = 0x11;
-    RX1DTPPS = 0x0D;
 }
 
-void PIN_MANAGER_IOC(void)
+_Bool EUSART2_is_tx_ready(void)
 {
+    return (_Bool)(PIR3bits.TX2IF && TX2STAbits.TXEN);
+}
+
+_Bool EUSART2_is_rx_ready(void)
+{
+    return (_Bool)(PIR3bits.RC2IF);
+}
+
+_Bool EUSART2_is_tx_done(void)
+{
+    return TX2STAbits.TRMT;
+}
+
+eusart2_status_t EUSART2_get_last_status(void){
+    return eusart2RxLastError;
+}
+
+uint8_t EUSART2_Read(void)
+{
+    while(!PIR3bits.RC2IF)
+    {
+    }
+
+    eusart2RxLastError.status = 0;
+
+    if(1 == RC2STAbits.OERR)
+    {
+
+
+        RC2STAbits.CREN = 0;
+        RC2STAbits.CREN = 1;
+    }
+
+    return RC2REG;
+}
+
+void EUSART2_Write(uint8_t txData)
+{
+    while(0 == PIR3bits.TX2IF)
+    {
+    }
+
+    TX2REG = txData;
+}
+
+
+
+
+void EUSART2_DefaultFramingErrorHandler(void){}
+
+void EUSART2_DefaultOverrunErrorHandler(void){
+
+
+    RC2STAbits.CREN = 0;
+    RC2STAbits.CREN = 1;
+
+}
+
+void EUSART2_DefaultErrorHandler(void){
+}
+
+void EUSART2_SetFramingErrorHandler(void (* interruptHandler)(void)){
+    EUSART2_FramingErrorHandler = interruptHandler;
+}
+
+void EUSART2_SetOverrunErrorHandler(void (* interruptHandler)(void)){
+    EUSART2_OverrunErrorHandler = interruptHandler;
+}
+
+void EUSART2_SetErrorHandler(void (* interruptHandler)(void)){
+    EUSART2_ErrorHandler = interruptHandler;
 }

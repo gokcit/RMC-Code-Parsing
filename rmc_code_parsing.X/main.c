@@ -55,21 +55,27 @@ int readBuffer(char *ptr[], int nth);
                          Main application
  */
 
-char intToAscii(uint16_t number) {
-   return '0' + number;
-}
-void uitoa(uint16_t Value, uint8_t* Buffer)
+
+void parsing(uint16_t Value, uint8_t* Buffer, int char_counter)
 {
     uint8_t i;
     bool Printed = false;
 
     if(Value)
     {
-//        for(i = 0; i < 1; i++)
-//        {
-            *Buffer++ = Value;
-            Printed = true;
+        *Buffer++ = Value;
+        Printed = true;
+//        if(char_counter == 0 && Value == '$'){
+//            char_counter += 1;
+//            printf("Sentence starts... ");
+//            printf("Character found: %c\r\n", Value);
+            //printf("%i", char_counter);
 //        }
+//        if(Value == '\n'){
+//            printf("End of the sentence.\r\n");
+//            char_counter = 0;
+//        }
+
     }
     else
     {
@@ -78,6 +84,17 @@ void uitoa(uint16_t Value, uint8_t* Buffer)
 
     *Buffer = '\0';
 }
+
+//void print(char *C){
+//    while(*C != '\0'){
+//        if(*C == '$') {
+//            printf("Sentence started");
+//        }
+//        printf("%c",*C);
+//        C++;
+//    }
+//    printf("\r\n");
+//    
 void main(void)
 {
     // initialize the device
@@ -99,29 +116,38 @@ void main(void)
     //INTERRUPT_PeripheralInterruptDisable();
     
     int i = 0;
-    
+    int char_counter = 0;
     // Test line
-    while (1)
-    {
+    while (1){
+        
         // Add your application code
         uint16_t read = EUSART1_Read();
         uint8_t Buffer[10];
-        uitoa(read, Buffer);
-        printf(Buffer);
-        EUSART2_Write(read);
+        parsing(read, Buffer, char_counter);
+        //printf(Buffer);
+        if(*strchr(Buffer, '\n') == '\n'){
+            printf("The end.");
+            break;
+        }
+        if(*strchr(Buffer, '$') == '$'){
+            printf("This is a valid sentence that starts with: %c!\r\n", *strchr(Buffer, '$'));
+        }
+        //printf(Buffer);
+        //printf(Buffer);
         //EUSART2_Write(read);
-//        uint16_t readVal1[10];
-//        while(1 == RC1STAbits.OERR && i < 10){
-//            readVal1[i] = RC1REG;
-//            i++;
-//        }
-//        if(1 == RC1STAbits.OERR && i > 10){
-//            break;
-//        }
-//        //readVal1 = EUSART1_Read();
-//        //uint8_t readVal2 = EUSART2_Read();
-//        // Add your application code
-//        EUSART1_Write(readVal1);
+        //EUSART2_Write(read);
+    //        uint16_t readVal1[10];
+    //        while(1 == RC1STAbits.OERR && i < 10){
+    //            readVal1[i] = RC1REG;
+    //            i++;
+    //        }
+    //        if(1 == RC1STAbits.OERR && i > 10){
+    //            break;
+    //        }
+    //        //readVal1 = EUSART1_Read();
+    //        //uint8_t readVal2 = EUSART2_Read();
+    //        // Add your application code
+    //        EUSART1_Write(readVal1);
     }
 }
 /**

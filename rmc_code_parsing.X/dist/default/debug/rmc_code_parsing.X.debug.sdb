@@ -19,7 +19,9 @@
 [v _strlen strlen `(ui  1 e 2 0 ]
 "4 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\Umul8_16.c
 [v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
-"57 C:\Users\C63576\OneDrive - Microchip Technology Inc\Gokce and Johns shared folder\rmc-code-parsing\rmc_code_parsing.X\main.c
+"61 C:\Users\C63576\OneDrive - Microchip Technology Inc\Gokce and Johns shared folder\rmc-code-parsing\rmc_code_parsing.X\main.c
+[v _uitoa uitoa `(v  1 e 1 0 ]
+"92
 [v _main main `(v  1 e 1 0 ]
 "66 C:\Users\C63576\OneDrive - Microchip Technology Inc\Gokce and Johns shared folder\rmc-code-parsing\rmc_code_parsing.X\mcc_generated_files/eusart1.c
 [v _EUSART1_Initialize EUSART1_Initialize `(v  1 e 1 0 ]
@@ -41,11 +43,27 @@
 [v _EUSART1_SetOverrunErrorHandler EUSART1_SetOverrunErrorHandler `(v  1 e 1 0 ]
 "174
 [v _EUSART1_SetErrorHandler EUSART1_SetErrorHandler `(v  1 e 1 0 ]
+"66 C:\Users\C63576\OneDrive - Microchip Technology Inc\Gokce and Johns shared folder\rmc-code-parsing\rmc_code_parsing.X\mcc_generated_files/eusart2.c
+[v _EUSART2_Initialize EUSART2_Initialize `(v  1 e 1 0 ]
+"132
+[v _EUSART2_Write EUSART2_Write `(v  1 e 1 0 ]
+"144
+[v _EUSART2_DefaultFramingErrorHandler EUSART2_DefaultFramingErrorHandler `(v  1 e 1 0 ]
+"146
+[v _EUSART2_DefaultOverrunErrorHandler EUSART2_DefaultOverrunErrorHandler `(v  1 e 1 0 ]
+"154
+[v _EUSART2_DefaultErrorHandler EUSART2_DefaultErrorHandler `(v  1 e 1 0 ]
+"157
+[v _EUSART2_SetFramingErrorHandler EUSART2_SetFramingErrorHandler `(v  1 e 1 0 ]
+"161
+[v _EUSART2_SetOverrunErrorHandler EUSART2_SetOverrunErrorHandler `(v  1 e 1 0 ]
+"165
+[v _EUSART2_SetErrorHandler EUSART2_SetErrorHandler `(v  1 e 1 0 ]
 "50 C:\Users\C63576\OneDrive - Microchip Technology Inc\Gokce and Johns shared folder\rmc-code-parsing\rmc_code_parsing.X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
-"58
+"59
 [v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
-"74
+"75
 [v _PMD_Initialize PMD_Initialize `(v  1 e 1 0 ]
 "55 C:\Users\C63576\OneDrive - Microchip Technology Inc\Gokce and Johns shared folder\rmc-code-parsing\rmc_code_parsing.X\mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
@@ -71,7 +89,7 @@
 [v _SP1BRGH SP1BRGH `VEuc  1 e 1 @284 ]
 "1465
 [v _RC1STA RC1STA `VEuc  1 e 1 @285 ]
-[s S133 . 1 `uc 1 RX9D 1 0 :1:0 
+[s S135 . 1 `uc 1 RX9D 1 0 :1:0 
 `uc 1 OERR 1 0 :1:1 
 `uc 1 FERR 1 0 :1:2 
 `uc 1 ADDEN 1 0 :1:3 
@@ -81,11 +99,11 @@
 `uc 1 SPEN 1 0 :1:7 
 ]
 "1491
-[u S142 . 1 `S133 1 . 1 0 ]
-[v _RC1STAbits RC1STAbits `VES142  1 e 1 @285 ]
+[u S144 . 1 `S135 1 . 1 0 ]
+[v _RC1STAbits RC1STAbits `VES144  1 e 1 @285 ]
 "1645
 [v _TX1STA TX1STA `VEuc  1 e 1 @286 ]
-[s S112 . 1 `uc 1 TX9D 1 0 :1:0 
+[s S114 . 1 `uc 1 TX9D 1 0 :1:0 
 `uc 1 TRMT 1 0 :1:1 
 `uc 1 BRGH 1 0 :1:2 
 `uc 1 SENDB 1 0 :1:3 
@@ -95,11 +113,11 @@
 `uc 1 CSRC 1 0 :1:7 
 ]
 "1671
-[u S121 . 1 `S112 1 . 1 0 ]
-[v _TX1STAbits TX1STAbits `VES121  1 e 1 @286 ]
+[u S123 . 1 `S114 1 . 1 0 ]
+[v _TX1STAbits TX1STAbits `VES123  1 e 1 @286 ]
 "1825
 [v _BAUD1CON BAUD1CON `VEuc  1 e 1 @287 ]
-[s S93 . 1 `uc 1 SSP1IF 1 0 :1:0 
+[s S95 . 1 `uc 1 SSP1IF 1 0 :1:0 
 `uc 1 BCL1IF 1 0 :1:1 
 `uc 1 . 1 0 :2:2 
 `uc 1 TX1IF 1 0 :1:4 
@@ -108,8 +126,8 @@
 `uc 1 RC2IF 1 0 :1:7 
 ]
 "8061
-[u S101 . 1 `S93 1 . 1 0 ]
-[v _PIR3bits PIR3bits `VES101  1 e 1 @1807 ]
+[u S103 . 1 `S95 1 . 1 0 ]
+[v _PIR3bits PIR3bits `VES103  1 e 1 @1807 ]
 "8524
 [v _PMD0 PMD0 `VEuc  1 e 1 @1942 ]
 "8569
@@ -134,10 +152,32 @@
 [v _OSCTUNE OSCTUNE `VEuc  1 e 1 @2194 ]
 "10166
 [v _OSCFRQ OSCFRQ `VEuc  1 e 1 @2195 ]
+"11150
+[v _RC2REG RC2REG `VEuc  1 e 1 @2585 ]
+"11188
+[v _TX2REG TX2REG `VEuc  1 e 1 @2586 ]
+"11233
+[v _SP2BRGL SP2BRGL `VEuc  1 e 1 @2587 ]
+"11271
+[v _SP2BRGH SP2BRGH `VEuc  1 e 1 @2588 ]
+"11309
+[v _RC2STA RC2STA `VEuc  1 e 1 @2589 ]
+"11331
+[v _RC2STAbits RC2STAbits `VES144  1 e 1 @2589 ]
+"11431
+[v _TX2STA TX2STA `VEuc  1 e 1 @2590 ]
+"11453
+[v _TX2STAbits TX2STAbits `VES123  1 e 1 @2590 ]
+"11553
+[v _BAUD2CON BAUD2CON `VEuc  1 e 1 @2591 ]
 "16929
 [v _RX1DTPPS RX1DTPPS `VEuc  1 e 1 @7883 ]
+"17045
+[v _RX2DTPPS RX2DTPPS `VEuc  1 e 1 @7885 ]
 "17557
 [v _RB7PPS RB7PPS `VEuc  1 e 1 @7967 ]
+"17601
+[v _RC0PPS RC0PPS `VEuc  1 e 1 @7968 ]
 "17953
 [v _ANSELA ANSELA `VEuc  1 e 1 @7992 ]
 "17998
@@ -174,72 +214,94 @@
 [v _width width `i  1 s 2 width ]
 "69
 [v _nout nout `i  1 s 2 nout ]
-[s S47 . 1 `uc 1 perr 1 0 :1:0 
+[s S49 . 1 `uc 1 perr 1 0 :1:0 
 `uc 1 ferr 1 0 :1:1 
 `uc 1 oerr 1 0 :1:2 
 `uc 1 reserved 1 0 :5:3 
 ]
 "52 C:\Users\C63576\OneDrive - Microchip Technology Inc\Gokce and Johns shared folder\rmc-code-parsing\rmc_code_parsing.X\mcc_generated_files/eusart1.c
-[u S52 . 1 `S47 1 . 1 0 `uc 1 status 1 0 ]
-[v _eusart1RxLastError eusart1RxLastError `VES52  1 e 1 0 ]
+[u S54 . 1 `S49 1 . 1 0 `uc 1 status 1 0 ]
+[v _eusart1RxLastError eusart1RxLastError `VES54  1 e 1 0 ]
 "58
 [v _EUSART1_FramingErrorHandler EUSART1_FramingErrorHandler `*.37(v  1 e 2 0 ]
 "59
 [v _EUSART1_OverrunErrorHandler EUSART1_OverrunErrorHandler `*.37(v  1 e 2 0 ]
 "60
 [v _EUSART1_ErrorHandler EUSART1_ErrorHandler `*.37(v  1 e 2 0 ]
-"57 C:\Users\C63576\OneDrive - Microchip Technology Inc\Gokce and Johns shared folder\rmc-code-parsing\rmc_code_parsing.X\main.c
+"52 C:\Users\C63576\OneDrive - Microchip Technology Inc\Gokce and Johns shared folder\rmc-code-parsing\rmc_code_parsing.X\mcc_generated_files/eusart2.c
+[v _eusart2RxLastError eusart2RxLastError `VES54  1 e 1 0 ]
+"58
+[v _EUSART2_FramingErrorHandler EUSART2_FramingErrorHandler `*.37(v  1 e 2 0 ]
+"59
+[v _EUSART2_OverrunErrorHandler EUSART2_OverrunErrorHandler `*.37(v  1 e 2 0 ]
+"60
+[v _EUSART2_ErrorHandler EUSART2_ErrorHandler `*.37(v  1 e 2 0 ]
+"92 C:\Users\C63576\OneDrive - Microchip Technology Inc\Gokce and Johns shared folder\rmc-code-parsing\rmc_code_parsing.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"98
+"119
+[v main@Buffer Buffer `[10]uc  1 a 10 17 ]
+"118
+[v main@read read `us  1 a 2 29 ]
+"137
+} 0
+"61
+[v _uitoa uitoa `(v  1 e 1 0 ]
+{
+[v uitoa@Value Value `us  1 p 2 0 ]
+[v uitoa@Buffer Buffer `*.4uc  1 p 1 2 ]
+"80
 } 0
 "5 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\printf.c
 [v _printf printf `(i  1 e 2 0 ]
 {
+[v printf@fmt fmt `*.4DCuc  1 a 1 wreg ]
 "8
-[v printf@ap ap `[1]*.4v  1 a 1 18 ]
+[v printf@ap ap `[1]*.1v  1 a 1 14 ]
 "5
-[v printf@fmt fmt `*.25DCuc  1 p 2 13 ]
+[v printf@fmt fmt `*.4DCuc  1 a 1 wreg ]
+"9
+[v printf@fmt fmt `*.4DCuc  1 a 1 13 ]
 "13
 } 0
 "1390 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\doprnt.c
 [v _vfprintf vfprintf `(i  1 e 2 0 ]
 {
-[s S596 _IO_FILE 0 ]
-[v vfprintf@fp fp `*.1S596  1 a 1 wreg ]
+[s S765 _IO_FILE 0 ]
+[v vfprintf@fp fp `*.1S765  1 a 1 wreg ]
 "1393
-[v vfprintf@cfmt cfmt `*.25uc  1 a 2 11 ]
+[v vfprintf@cfmt cfmt `*.4uc  1 a 1 8 ]
 "1390
-[v vfprintf@fp fp `*.1S596  1 a 1 wreg ]
-[v vfprintf@fmt fmt `*.25DCuc  1 p 2 5 ]
-[v vfprintf@ap ap `*.4*.4v  1 p 1 7 ]
+[v vfprintf@fp fp `*.1S765  1 a 1 wreg ]
+[v vfprintf@fmt fmt `*.4DCuc  1 p 1 3 ]
+[v vfprintf@ap ap `*.4*.1v  1 p 1 4 ]
 "1395
 "1390
-[v vfprintf@fp fp `*.1S596  1 a 1 10 ]
+[v vfprintf@fp fp `*.1S765  1 a 1 7 ]
 "1404
 } 0
 "692
 [v _vfpfcnvrt vfpfcnvrt `(i  1 s 2 vfpfcnvrt ]
 {
-[s S596 _IO_FILE 0 ]
-[v vfpfcnvrt@fp fp `*.1S596  1 a 1 wreg ]
+[s S765 _IO_FILE 0 ]
+[v vfpfcnvrt@fp fp `*.1S765  1 a 1 wreg ]
 "699
-[v vfpfcnvrt@vp vp `*.4v  1 a 1 12 ]
+[v vfpfcnvrt@vp vp `*.1v  1 a 1 12 ]
 "692
-[v vfpfcnvrt@fp fp `*.1S596  1 a 1 wreg ]
-[v vfpfcnvrt@fmt fmt `*.4*.25uc  1 p 1 10 ]
-[v vfpfcnvrt@ap ap `*.4*.4v  1 p 1 11 ]
+[v vfpfcnvrt@fp fp `*.1S765  1 a 1 wreg ]
+[v vfpfcnvrt@fmt fmt `*.4*.4uc  1 p 1 10 ]
+[v vfpfcnvrt@ap ap `*.4*.1v  1 p 1 11 ]
 "702
 "692
-[v vfpfcnvrt@fp fp `*.1S596  1 a 1 13 ]
+[v vfpfcnvrt@fp fp `*.1S765  1 a 1 13 ]
 "1387
 } 0
 "8 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\nf_fputc.c
 [v _fputc fputc `(i  1 e 2 0 ]
 {
 [v fputc@c c `i  1 p 2 2 ]
-[s S579 _IO_FILE 5 `*.1uc 1 buffer 1 0 `i 1 count 2 1 `i 1 limit 2 3 ]
-[v fputc@fp fp `*.1S579  1 p 1 4 ]
+[s S748 _IO_FILE 5 `*.1uc 1 buffer 1 0 `i 1 count 2 1 `i 1 limit 2 3 ]
+[v fputc@fp fp `*.1S748  1 p 1 4 ]
 "24
 } 0
 "146 C:\Users\C63576\OneDrive - Microchip Technology Inc\Gokce and Johns shared folder\rmc-code-parsing\rmc_code_parsing.X\mcc_generated_files/eusart1.c
@@ -262,22 +324,45 @@
 "50 C:\Users\C63576\OneDrive - Microchip Technology Inc\Gokce and Johns shared folder\rmc-code-parsing\rmc_code_parsing.X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
 {
-"56
+"57
 } 0
-"74
+"75
 [v _PMD_Initialize PMD_Initialize `(v  1 e 1 0 ]
 {
-"88
+"89
 } 0
 "55 C:\Users\C63576\OneDrive - Microchip Technology Inc\Gokce and Johns shared folder\rmc-code-parsing\rmc_code_parsing.X\mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
 {
-"115
+"117
 } 0
-"58 C:\Users\C63576\OneDrive - Microchip Technology Inc\Gokce and Johns shared folder\rmc-code-parsing\rmc_code_parsing.X\mcc_generated_files/mcc.c
+"59 C:\Users\C63576\OneDrive - Microchip Technology Inc\Gokce and Johns shared folder\rmc-code-parsing\rmc_code_parsing.X\mcc_generated_files/mcc.c
 [v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
 {
-"72
+"73
+} 0
+"66 C:\Users\C63576\OneDrive - Microchip Technology Inc\Gokce and Johns shared folder\rmc-code-parsing\rmc_code_parsing.X\mcc_generated_files/eusart2.c
+[v _EUSART2_Initialize EUSART2_Initialize `(v  1 e 1 0 ]
+{
+"92
+} 0
+"161
+[v _EUSART2_SetOverrunErrorHandler EUSART2_SetOverrunErrorHandler `(v  1 e 1 0 ]
+{
+[v EUSART2_SetOverrunErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 0 ]
+"163
+} 0
+"157
+[v _EUSART2_SetFramingErrorHandler EUSART2_SetFramingErrorHandler `(v  1 e 1 0 ]
+{
+[v EUSART2_SetFramingErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 0 ]
+"159
+} 0
+"165
+[v _EUSART2_SetErrorHandler EUSART2_SetErrorHandler `(v  1 e 1 0 ]
+{
+[v EUSART2_SetErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 0 ]
+"167
 } 0
 "66 C:\Users\C63576\OneDrive - Microchip Technology Inc\Gokce and Johns shared folder\rmc-code-parsing\rmc_code_parsing.X\mcc_generated_files/eusart1.c
 [v _EUSART1_Initialize EUSART1_Initialize `(v  1 e 1 0 ]
@@ -302,7 +387,15 @@
 [v EUSART1_SetErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 0 ]
 "176
 } 0
-"113
+"132 C:\Users\C63576\OneDrive - Microchip Technology Inc\Gokce and Johns shared folder\rmc-code-parsing\rmc_code_parsing.X\mcc_generated_files/eusart2.c
+[v _EUSART2_Write EUSART2_Write `(v  1 e 1 0 ]
+{
+[v EUSART2_Write@txData txData `uc  1 a 1 wreg ]
+[v EUSART2_Write@txData txData `uc  1 a 1 wreg ]
+[v EUSART2_Write@txData txData `uc  1 a 1 0 ]
+"139
+} 0
+"113 C:\Users\C63576\OneDrive - Microchip Technology Inc\Gokce and Johns shared folder\rmc-code-parsing\rmc_code_parsing.X\mcc_generated_files/eusart1.c
 [v _EUSART1_Read EUSART1_Read `(uc  1 e 1 0 ]
 {
 "130

@@ -1,16 +1,16 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [p mainexit ]
-"70 ./mcc_generated_files/mcc.h
-[; ;./mcc_generated_files/mcc.h: 70: void SYSTEM_Initialize(void);
+"71 ./mcc_generated_files/mcc.h
+[; ;./mcc_generated_files/mcc.h: 71: void SYSTEM_Initialize(void);
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
 "322 ./mcc_generated_files/eusart1.h
 [; ;./mcc_generated_files/eusart1.h: 322: uint8_t EUSART1_Read(void);
 [v _EUSART1_Read `(uc ~T0 @X0 0 ef ]
 "111 C:\Program Files\Microchip\xc8\v2.31\pic\include\c99\stdio.h
 [v _printf `(i ~T0 @X0 0 ev`*Cuc ]
-"1226 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f15345.h
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f15345.h: 1226: extern volatile unsigned char RC1REG __attribute__((address(0x119)));
-[v _RC1REG `Vuc ~T0 @X0 0 e@281 ]
+"341 ./mcc_generated_files/eusart2.h
+[; ;./mcc_generated_files/eusart2.h: 341: void EUSART2_Write(uint8_t txData);
+[v _EUSART2_Write `(v ~T0 @X0 0 ef1`uc ]
 "111 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f15345.h
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f15345.h: 111: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -986,43 +986,124 @@ Version 4.0 HI-TECH Software Intermediate Code
 "50 main.c
 [; ;main.c: 50: char *ptr[10];
 [v _ptr `*uc ~T0 @X0 -> 10 `i e ]
-[v $root$_main `(v ~T0 @X0 0 e ]
-"57
-[; ;main.c: 57: void main(void)
-[v _main `(v ~T0 @X0 1 ef ]
 "58
-[; ;main.c: 58: {
+[; ;main.c: 58: char intToAscii(uint16_t number) {
+[v _intToAscii `(uc ~T0 @X0 1 ef1`us ]
+{
+[e :U _intToAscii ]
+[v _number `us ~T0 @X0 1 r1 ]
+[f ]
+"59
+[; ;main.c: 59:    return '0' + number;
+[e ) -> + -> 48 `ui -> _number `ui `uc ]
+[e $UE 916  ]
+"60
+[; ;main.c: 60: }
+[e :UE 916 ]
+}
+"61
+[; ;main.c: 61: void uitoa(uint16_t Value, uint8_t* Buffer)
+[v _uitoa `(v ~T0 @X0 1 ef2`us`*uc ]
+"62
+[; ;main.c: 62: {
+{
+[e :U _uitoa ]
+"61
+[; ;main.c: 61: void uitoa(uint16_t Value, uint8_t* Buffer)
+[v _Value `us ~T0 @X0 1 r1 ]
+[v _Buffer `*uc ~T0 @X0 1 r2 ]
+"62
+[; ;main.c: 62: {
+[f ]
+"63
+[; ;main.c: 63:     uint8_t i;
+[v _i `uc ~T0 @X0 1 a ]
+"64
+[; ;main.c: 64:     _Bool Printed = 0;
+[v _Printed `a ~T0 @X0 1 a ]
+[e = _Printed -> -> 0 `i `a ]
+"66
+[; ;main.c: 66:     if(Value)
+[e $ ! != -> _Value `ui -> -> 0 `i `ui 918  ]
+"67
+[; ;main.c: 67:     {
+{
+"70
+[; ;main.c: 70:             *Buffer++ = Value;
+[e = *U ++ _Buffer * -> -> 1 `i `x -> -> # *U _Buffer `i `x -> _Value `uc ]
+"71
+[; ;main.c: 71:             Printed = 1;
+[e = _Printed -> -> 1 `i `a ]
+"73
+[; ;main.c: 73:     }
+}
+[e $U 919  ]
+"74
+[; ;main.c: 74:     else
+[e :U 918 ]
+"75
+[; ;main.c: 75:     {
+{
+"76
+[; ;main.c: 76:         *Buffer++ = '0';
+[e = *U ++ _Buffer * -> -> 1 `i `x -> -> # *U _Buffer `i `x -> -> 48 `ui `uc ]
+"77
+[; ;main.c: 77:     }
+}
+[e :U 919 ]
+"79
+[; ;main.c: 79:     *Buffer = '\0';
+[e = *U _Buffer -> -> 0 `ui `uc ]
+"80
+[; ;main.c: 80: }
+[e :UE 917 ]
+}
+[v $root$_main `(v ~T0 @X0 0 e ]
+"92
+[; ;main.c: 92: void main(void)
+[v _main `(v ~T0 @X0 1 ef ]
+"93
+[; ;main.c: 93: {
 {
 [e :U _main ]
 [f ]
-"60
-[; ;main.c: 60:     SYSTEM_Initialize();
+"95
+[; ;main.c: 95:     SYSTEM_Initialize();
 [e ( _SYSTEM_Initialize ..  ]
-"77
-[; ;main.c: 77:     int i = 0;
+"112
+[; ;main.c: 112:     int i = 0;
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
-"80
-[; ;main.c: 80:     while (1)
-[e :U 916 ]
-"81
-[; ;main.c: 81:     {
+"115
+[; ;main.c: 115:     while (1)
+[e :U 922 ]
+"116
+[; ;main.c: 116:     {
 {
-"83
-[; ;main.c: 83:         uint16_t read = EUSART1_Read();
+"118
+[; ;main.c: 118:         uint16_t read = EUSART1_Read();
 [v _read `us ~T0 @X0 1 a ]
 [e = _read -> ( _EUSART1_Read ..  `us ]
-"84
-[; ;main.c: 84:         printf(RC1REG);
-[e ( _printf -> _RC1REG `*Cuc ]
-"97
-[; ;main.c: 97:     }
+"119
+[; ;main.c: 119:         uint8_t Buffer[10];
+[v _Buffer `uc ~T0 @X0 -> 10 `i a ]
+"120
+[; ;main.c: 120:         uitoa(read, Buffer);
+[e ( _uitoa (2 , _read &U _Buffer ]
+"121
+[; ;main.c: 121:         printf(Buffer);
+[e ( _printf -> &U _Buffer `*Cuc ]
+"122
+[; ;main.c: 122:         EUSART2_Write(read);
+[e ( _EUSART2_Write (1 -> _read `uc ]
+"136
+[; ;main.c: 136:     }
 }
-[e :U 915 ]
-[e $U 916  ]
-[e :U 917 ]
-"98
-[; ;main.c: 98: }
-[e :UE 914 ]
+[e :U 921 ]
+[e $U 922  ]
+[e :U 923 ]
+"137
+[; ;main.c: 137: }
+[e :UE 920 ]
 }
 [p f _printf 9437696 ]
