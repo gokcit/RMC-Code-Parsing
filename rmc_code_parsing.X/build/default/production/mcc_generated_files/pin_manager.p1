@@ -62,9 +62,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 "18898
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f15345.h: 18898: extern volatile unsigned char INLVLC __attribute__((address(0x1F52)));
 [v _INLVLC `Vuc ~T0 @X0 0 e@8018 ]
+"17601
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f15345.h: 17601: extern volatile unsigned char RC0PPS __attribute__((address(0x1F20)));
+[v _RC0PPS `Vuc ~T0 @X0 0 e@7968 ]
 "17557
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f15345.h: 17557: extern volatile unsigned char RB7PPS __attribute__((address(0x1F1F)));
 [v _RB7PPS `Vuc ~T0 @X0 0 e@7967 ]
+"17045
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f15345.h: 17045: extern volatile unsigned char RX2DTPPS __attribute__((address(0x1ECD)));
+[v _RX2DTPPS `Vuc ~T0 @X0 0 e@7885 ]
 "16929
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f15345.h: 16929: extern volatile unsigned char RX1DTPPS __attribute__((address(0x1ECB)));
 [v _RX1DTPPS `Vuc ~T0 @X0 0 e@7883 ]
@@ -1064,11 +1070,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/pin_manager.c: 68:     TRISB = 0x70;
 [e = _TRISB -> -> 112 `i `uc ]
 "69
-[; ;mcc_generated_files/pin_manager.c: 69:     TRISC = 0xFF;
-[e = _TRISC -> -> 255 `i `uc ]
+[; ;mcc_generated_files/pin_manager.c: 69:     TRISC = 0xFE;
+[e = _TRISC -> -> 254 `i `uc ]
 "74
-[; ;mcc_generated_files/pin_manager.c: 74:     ANSELC = 0xFF;
-[e = _ANSELC -> -> 255 `i `uc ]
+[; ;mcc_generated_files/pin_manager.c: 74:     ANSELC = 0xFD;
+[e = _ANSELC -> -> 253 `i `uc ]
 "75
 [; ;mcc_generated_files/pin_manager.c: 75:     ANSELB = 0xD0;
 [e = _ANSELB -> -> 208 `i `uc ]
@@ -1112,24 +1118,30 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/pin_manager.c: 104:     INLVLC = 0x3F;
 [e = _INLVLC -> -> 63 `i `uc ]
 "113
-[; ;mcc_generated_files/pin_manager.c: 113:     RB7PPS = 0x0F;
-[e = _RB7PPS -> -> 15 `i `uc ]
+[; ;mcc_generated_files/pin_manager.c: 113:     RC0PPS = 0x11;
+[e = _RC0PPS -> -> 17 `i `uc ]
 "114
-[; ;mcc_generated_files/pin_manager.c: 114:     RX1DTPPS = 0x0D;
-[e = _RX1DTPPS -> -> 13 `i `uc ]
+[; ;mcc_generated_files/pin_manager.c: 114:     RB7PPS = 0x0F;
+[e = _RB7PPS -> -> 15 `i `uc ]
 "115
-[; ;mcc_generated_files/pin_manager.c: 115: }
+[; ;mcc_generated_files/pin_manager.c: 115:     RX2DTPPS = 0x11;
+[e = _RX2DTPPS -> -> 17 `i `uc ]
+"116
+[; ;mcc_generated_files/pin_manager.c: 116:     RX1DTPPS = 0x0D;
+[e = _RX1DTPPS -> -> 13 `i `uc ]
+"117
+[; ;mcc_generated_files/pin_manager.c: 117: }
 [e :UE 909 ]
 }
-"117
-[; ;mcc_generated_files/pin_manager.c: 117: void PIN_MANAGER_IOC(void)
+"119
+[; ;mcc_generated_files/pin_manager.c: 119: void PIN_MANAGER_IOC(void)
 [v _PIN_MANAGER_IOC `(v ~T0 @X0 1 ef ]
-"118
-[; ;mcc_generated_files/pin_manager.c: 118: {
+"120
+[; ;mcc_generated_files/pin_manager.c: 120: {
 {
 [e :U _PIN_MANAGER_IOC ]
 [f ]
-"119
-[; ;mcc_generated_files/pin_manager.c: 119: }
+"121
+[; ;mcc_generated_files/pin_manager.c: 121: }
 [e :UE 910 ]
 }

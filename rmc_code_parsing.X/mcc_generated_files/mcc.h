@@ -53,6 +53,7 @@
 #include <stdbool.h>
 #include <conio.h>
 #include "eusart1.h"
+#include "eusart2.h"
 
 
 

@@ -42,10 +42,42 @@
 */
 
 #include "mcc_generated_files/mcc.h"
+#include <stdio.h>
+#include <string.h>
+
+#define MAXLEN 10 // This will be the size of the buffer
+
+char *ptr[MAXLEN];
+
+int readBuffer(char *ptr[], int nth);
 
 /*
                          Main application
  */
+
+char intToAscii(uint16_t number) {
+   return '0' + number;
+}
+void uitoa(uint16_t Value, uint8_t* Buffer)
+{
+    uint8_t i;
+    bool Printed = false;
+
+    if(Value)
+    {
+//        for(i = 0; i < 1; i++)
+//        {
+            *Buffer++ = Value;
+            Printed = true;
+//        }
+    }
+    else
+    {
+        *Buffer++ = '0';
+    }
+
+    *Buffer = '\0';
+}
 void main(void)
 {
     // initialize the device
@@ -72,18 +104,24 @@ void main(void)
     while (1)
     {
         // Add your application code
-        char readVal1[10];
-        if(1 == RC1STAbits.OERR && i < 10){
-            readVal1[i] = RC1REG;
-            i++;
-        }
-        else if(1 == RC1STAbits.OERR && i > 10){
-            break;
-        }
-        //readVal1 = EUSART1_Read();
-        //uint8_t readVal2 = EUSART2_Read();
-        // Add your application code
-        //EUSART1_Write(readVal1);
+        uint16_t read = EUSART1_Read();
+        uint8_t Buffer[10];
+        uitoa(read, Buffer);
+        printf(Buffer);
+        EUSART2_Write(read);
+        //EUSART2_Write(read);
+//        uint16_t readVal1[10];
+//        while(1 == RC1STAbits.OERR && i < 10){
+//            readVal1[i] = RC1REG;
+//            i++;
+//        }
+//        if(1 == RC1STAbits.OERR && i > 10){
+//            break;
+//        }
+//        //readVal1 = EUSART1_Read();
+//        //uint8_t readVal2 = EUSART2_Read();
+//        // Add your application code
+//        EUSART1_Write(readVal1);
     }
 }
 /**

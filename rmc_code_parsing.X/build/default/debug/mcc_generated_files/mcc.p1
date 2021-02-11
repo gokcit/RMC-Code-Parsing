@@ -1,16 +1,52 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[p mainexit ]
-"71 ./mcc_generated_files/mcc.h
-[; ;./mcc_generated_files/mcc.h: 71: void SYSTEM_Initialize(void);
-[v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
-"322 ./mcc_generated_files/eusart1.h
-[; ;./mcc_generated_files/eusart1.h: 322: uint8_t EUSART1_Read(void);
-[v _EUSART1_Read `(uc ~T0 @X0 0 ef ]
-"111 C:\Program Files\Microchip\xc8\v2.31\pic\include\c99\stdio.h
-[v _printf `(i ~T0 @X0 0 ev`*Cuc ]
-"341 ./mcc_generated_files/eusart2.h
-[; ;./mcc_generated_files/eusart2.h: 341: void EUSART2_Write(uint8_t txData);
-[v _EUSART2_Write `(v ~T0 @X0 0 ef1`uc ]
+"96 mcc_generated_files/mcc.h
+[; ;mcc_generated_files/mcc.h: 96: void PMD_Initialize(void);
+[v _PMD_Initialize `(v ~T0 @X0 0 ef ]
+"102 mcc_generated_files/pin_manager.h
+[; ;mcc_generated_files/pin_manager.h: 102: void PIN_MANAGER_Initialize (void);
+[v _PIN_MANAGER_Initialize `(v ~T0 @X0 0 ef ]
+"83 mcc_generated_files/mcc.h
+[; ;mcc_generated_files/mcc.h: 83: void OSCILLATOR_Initialize(void);
+[v _OSCILLATOR_Initialize `(v ~T0 @X0 0 ef ]
+"111 mcc_generated_files/eusart1.h
+[; ;mcc_generated_files/eusart1.h: 111: void EUSART1_Initialize(void);
+[v _EUSART1_Initialize `(v ~T0 @X0 0 ef ]
+"9820 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f15345.h
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f15345.h: 9820: extern volatile unsigned char OSCCON1 __attribute__((address(0x88D)));
+[v _OSCCON1 `Vuc ~T0 @X0 0 e@2189 ]
+"9960
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f15345.h: 9960: extern volatile unsigned char OSCCON3 __attribute__((address(0x88F)));
+[v _OSCCON3 `Vuc ~T0 @X0 0 e@2191 ]
+"10057
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f15345.h: 10057: extern volatile unsigned char OSCEN __attribute__((address(0x891)));
+[v _OSCEN `Vuc ~T0 @X0 0 e@2193 ]
+"10166
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f15345.h: 10166: extern volatile unsigned char OSCFRQ __attribute__((address(0x893)));
+[v _OSCFRQ `Vuc ~T0 @X0 0 e@2195 ]
+"10000
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f15345.h: 10000: extern volatile unsigned char OSCSTAT __attribute__((address(0x890)));
+[v _OSCSTAT `Vuc ~T0 @X0 0 e@2192 ]
+"10108
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f15345.h: 10108: extern volatile unsigned char OSCTUNE __attribute__((address(0x892)));
+[v _OSCTUNE `Vuc ~T0 @X0 0 e@2194 ]
+"8524
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f15345.h: 8524: extern volatile unsigned char PMD0 __attribute__((address(0x796)));
+[v _PMD0 `Vuc ~T0 @X0 0 e@1942 ]
+"8569
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f15345.h: 8569: extern volatile unsigned char PMD1 __attribute__((address(0x797)));
+[v _PMD1 `Vuc ~T0 @X0 0 e@1943 ]
+"8617
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f15345.h: 8617: extern volatile unsigned char PMD2 __attribute__((address(0x798)));
+[v _PMD2 `Vuc ~T0 @X0 0 e@1944 ]
+"8662
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f15345.h: 8662: extern volatile unsigned char PMD3 __attribute__((address(0x799)));
+[v _PMD3 `Vuc ~T0 @X0 0 e@1945 ]
+"8712
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f15345.h: 8712: extern volatile unsigned char PMD4 __attribute__((address(0x79A)));
+[v _PMD4 `Vuc ~T0 @X0 0 e@1946 ]
+"8752
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f15345.h: 8752: extern volatile unsigned char PMD5 __attribute__((address(0x79B)));
+[v _PMD5 `Vuc ~T0 @X0 0 e@1947 ]
 "111 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f15345.h
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f15345.h: 111: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -983,127 +1019,87 @@ Version 4.0 HI-TECH Software Intermediate Code
 "19456
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f15345.h: 19456: __asm("TOSH equ 01FEFh");
 [; <" TOSH equ 01FEFh ;# ">
-"50 main.c
-[; ;main.c: 50: char *ptr[10];
-[v _ptr `*uc ~T0 @X0 -> 10 `i e ]
+"50 mcc_generated_files/mcc.c
+[; ;mcc_generated_files/mcc.c: 50: void SYSTEM_Initialize(void)
+[v _SYSTEM_Initialize `(v ~T0 @X0 1 ef ]
+"51
+[; ;mcc_generated_files/mcc.c: 51: {
+{
+[e :U _SYSTEM_Initialize ]
+[f ]
+"52
+[; ;mcc_generated_files/mcc.c: 52:     PMD_Initialize();
+[e ( _PMD_Initialize ..  ]
+"53
+[; ;mcc_generated_files/mcc.c: 53:     PIN_MANAGER_Initialize();
+[e ( _PIN_MANAGER_Initialize ..  ]
+"54
+[; ;mcc_generated_files/mcc.c: 54:     OSCILLATOR_Initialize();
+[e ( _OSCILLATOR_Initialize ..  ]
+"55
+[; ;mcc_generated_files/mcc.c: 55:     EUSART1_Initialize();
+[e ( _EUSART1_Initialize ..  ]
+"56
+[; ;mcc_generated_files/mcc.c: 56: }
+[e :UE 913 ]
+}
 "58
-[; ;main.c: 58: char intToAscii(uint16_t number) {
-[v _intToAscii `(uc ~T0 @X0 1 ef1`us ]
-{
-[e :U _intToAscii ]
-[v _number `us ~T0 @X0 1 r1 ]
-[f ]
+[; ;mcc_generated_files/mcc.c: 58: void OSCILLATOR_Initialize(void)
+[v _OSCILLATOR_Initialize `(v ~T0 @X0 1 ef ]
 "59
-[; ;main.c: 59:    return '0' + number;
-[e ) -> + -> 48 `ui -> _number `ui `uc ]
-[e $UE 916  ]
-"60
-[; ;main.c: 60: }
-[e :UE 916 ]
-}
-"61
-[; ;main.c: 61: void uitoa(uint16_t Value, uint8_t* Buffer)
-[v _uitoa `(v ~T0 @X0 1 ef2`us`*uc ]
-"62
-[; ;main.c: 62: {
+[; ;mcc_generated_files/mcc.c: 59: {
 {
-[e :U _uitoa ]
-"61
-[; ;main.c: 61: void uitoa(uint16_t Value, uint8_t* Buffer)
-[v _Value `us ~T0 @X0 1 r1 ]
-[v _Buffer `*uc ~T0 @X0 1 r2 ]
-"62
-[; ;main.c: 62: {
+[e :U _OSCILLATOR_Initialize ]
 [f ]
+"61
+[; ;mcc_generated_files/mcc.c: 61:     OSCCON1 = 0x62;
+[e = _OSCCON1 -> -> 98 `i `uc ]
 "63
-[; ;main.c: 63:     uint8_t i;
-[v _i `uc ~T0 @X0 1 a ]
-"64
-[; ;main.c: 64:     _Bool Printed = 0;
-[v _Printed `a ~T0 @X0 1 a ]
-[e = _Printed -> -> 0 `i `a ]
-"66
-[; ;main.c: 66:     if(Value)
-[e $ ! != -> _Value `ui -> -> 0 `i `ui 918  ]
+[; ;mcc_generated_files/mcc.c: 63:     OSCCON3 = 0x00;
+[e = _OSCCON3 -> -> 0 `i `uc ]
+"65
+[; ;mcc_generated_files/mcc.c: 65:     OSCEN = 0x00;
+[e = _OSCEN -> -> 0 `i `uc ]
 "67
-[; ;main.c: 67:     {
-{
+[; ;mcc_generated_files/mcc.c: 67:     OSCFRQ = 0x02;
+[e = _OSCFRQ -> -> 2 `i `uc ]
 "69
-[; ;main.c: 69:         *Buffer++ = Value;
-[e = *U ++ _Buffer * -> -> 1 `i `x -> -> # *U _Buffer `i `x -> _Value `uc ]
-"70
-[; ;main.c: 70:         Printed = 1;
-[e = _Printed -> -> 1 `i `a ]
+[; ;mcc_generated_files/mcc.c: 69:     OSCSTAT = 0x00;
+[e = _OSCSTAT -> -> 0 `i `uc ]
+"71
+[; ;mcc_generated_files/mcc.c: 71:     OSCTUNE = 0x00;
+[e = _OSCTUNE -> -> 0 `i `uc ]
 "72
-[; ;main.c: 72:     }
+[; ;mcc_generated_files/mcc.c: 72: }
+[e :UE 914 ]
 }
-[e $U 919  ]
-"73
-[; ;main.c: 73:     else
-[e :U 918 ]
 "74
-[; ;main.c: 74:     {
-{
+[; ;mcc_generated_files/mcc.c: 74: void PMD_Initialize(void)
+[v _PMD_Initialize `(v ~T0 @X0 1 ef ]
 "75
-[; ;main.c: 75:         *Buffer++ = '0';
-[e = *U ++ _Buffer * -> -> 1 `i `x -> -> # *U _Buffer `i `x -> -> 48 `ui `uc ]
-"76
-[; ;main.c: 76:     }
-}
-[e :U 919 ]
-"78
-[; ;main.c: 78:     *Buffer = '\0';
-[e = *U _Buffer -> -> 0 `ui `uc ]
-"79
-[; ;main.c: 79: }
-[e :UE 917 ]
-}
-[v $root$_main `(v ~T0 @X0 0 e ]
-"80
-[; ;main.c: 80: void main(void)
-[v _main `(v ~T0 @X0 1 ef ]
-"81
-[; ;main.c: 81: {
+[; ;mcc_generated_files/mcc.c: 75: {
 {
-[e :U _main ]
+[e :U _PMD_Initialize ]
 [f ]
+"77
+[; ;mcc_generated_files/mcc.c: 77:     PMD0 = 0x00;
+[e = _PMD0 -> -> 0 `i `uc ]
+"79
+[; ;mcc_generated_files/mcc.c: 79:     PMD1 = 0x00;
+[e = _PMD1 -> -> 0 `i `uc ]
+"81
+[; ;mcc_generated_files/mcc.c: 81:     PMD2 = 0x00;
+[e = _PMD2 -> -> 0 `i `uc ]
 "83
-[; ;main.c: 83:     SYSTEM_Initialize();
-[e ( _SYSTEM_Initialize ..  ]
-"100
-[; ;main.c: 100:     int i = 0;
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 0 `i ]
-"103
-[; ;main.c: 103:     while (1)
-[e :U 922 ]
-"104
-[; ;main.c: 104:     {
-{
-"106
-[; ;main.c: 106:         uint16_t read = EUSART1_Read();
-[v _read `us ~T0 @X0 1 a ]
-[e = _read -> ( _EUSART1_Read ..  `us ]
-"107
-[; ;main.c: 107:         uint8_t Buffer[10];
-[v _Buffer `uc ~T0 @X0 -> 10 `i a ]
-"108
-[; ;main.c: 108:         uitoa(read, Buffer);
-[e ( _uitoa (2 , _read &U _Buffer ]
-"109
-[; ;main.c: 109:         printf(Buffer);
-[e ( _printf -> &U _Buffer `*Cuc ]
-"110
-[; ;main.c: 110:         EUSART2_Write(read);
-[e ( _EUSART2_Write (1 -> _read `uc ]
-"124
-[; ;main.c: 124:     }
+[; ;mcc_generated_files/mcc.c: 83:     PMD3 = 0x00;
+[e = _PMD3 -> -> 0 `i `uc ]
+"85
+[; ;mcc_generated_files/mcc.c: 85:     PMD4 = 0x00;
+[e = _PMD4 -> -> 0 `i `uc ]
+"87
+[; ;mcc_generated_files/mcc.c: 87:     PMD5 = 0x00;
+[e = _PMD5 -> -> 0 `i `uc ]
+"88
+[; ;mcc_generated_files/mcc.c: 88: }
+[e :UE 915 ]
 }
-[e :U 921 ]
-[e $U 922  ]
-[e :U 923 ]
-"125
-[; ;main.c: 125: }
-[e :UE 920 ]
-}
-[p f _printf 9437696 ]

@@ -1,4 +1,4 @@
-# 1 "mcc_generated_files/pin_manager.c"
+# 1 "mcc_generated_files/eusart1.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,10 +6,10 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "mcc_generated_files/pin_manager.c" 2
-# 49 "mcc_generated_files/pin_manager.c"
-# 1 "mcc_generated_files/pin_manager.h" 1
-# 54 "mcc_generated_files/pin_manager.h"
+# 1 "mcc_generated_files/eusart1.c" 2
+# 50 "mcc_generated_files/eusart1.c"
+# 1 "mcc_generated_files/eusart1.h" 1
+# 54 "mcc_generated_files/eusart1.h"
 # 1 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -11545,75 +11545,306 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\\pic\\include\\xc.h" 2 3
-# 54 "mcc_generated_files/pin_manager.h" 2
-# 126 "mcc_generated_files/pin_manager.h"
-void PIN_MANAGER_Initialize (void);
-# 138 "mcc_generated_files/pin_manager.h"
-void PIN_MANAGER_IOC(void);
-# 49 "mcc_generated_files/pin_manager.c" 2
+# 54 "mcc_generated_files/eusart1.h" 2
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdbool.h" 1 3
+# 55 "mcc_generated_files/eusart1.h" 2
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdio.h" 1 3
+# 24 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdio.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 1 3
+
+
+
+
+
+typedef void * va_list[1];
+
+
+
+
+typedef void * __isoc_va_list[1];
+# 137 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long ssize_t;
+# 246 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long long off_t;
+# 399 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef struct _IO_FILE FILE;
+# 24 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdio.h" 2 3
+# 52 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdio.h" 3
+typedef union _G_fpos64_t {
+ char __opaque[16];
+ double __align;
+} fpos_t;
+
+extern FILE *const stdin;
+extern FILE *const stdout;
+extern FILE *const stderr;
+
+
+
+
+
+FILE *fopen(const char *restrict, const char *restrict);
+FILE *freopen(const char *restrict, const char *restrict, FILE *restrict);
+int fclose(FILE *);
+
+int remove(const char *);
+int rename(const char *, const char *);
+
+int feof(FILE *);
+int ferror(FILE *);
+int fflush(FILE *);
+void clearerr(FILE *);
+
+int fseek(FILE *, long, int);
+long ftell(FILE *);
+void rewind(FILE *);
+
+int fgetpos(FILE *restrict, fpos_t *restrict);
+int fsetpos(FILE *, const fpos_t *);
+
+size_t fread(void *restrict, size_t, size_t, FILE *restrict);
+size_t fwrite(const void *restrict, size_t, size_t, FILE *restrict);
+
+int fgetc(FILE *);
+int getc(FILE *);
+int getchar(void);
+int ungetc(int, FILE *);
+
+int fputc(int, FILE *);
+int putc(int, FILE *);
+int putchar(int);
+
+char *fgets(char *restrict, int, FILE *restrict);
+
+char *gets(char *);
+
+
+int fputs(const char *restrict, FILE *restrict);
+int puts(const char *);
+
+#pragma printf_check(printf) const
+#pragma printf_check(vprintf) const
+#pragma printf_check(sprintf) const
+#pragma printf_check(snprintf) const
+#pragma printf_check(vsprintf) const
+#pragma printf_check(vsnprintf) const
+
+int printf(const char *restrict, ...);
+int fprintf(FILE *restrict, const char *restrict, ...);
+int sprintf(char *restrict, const char *restrict, ...);
+int snprintf(char *restrict, size_t, const char *restrict, ...);
+
+int vprintf(const char *restrict, __isoc_va_list);
+int vfprintf(FILE *restrict, const char *restrict, __isoc_va_list);
+int vsprintf(char *restrict, const char *restrict, __isoc_va_list);
+int vsnprintf(char *restrict, size_t, const char *restrict, __isoc_va_list);
+
+int scanf(const char *restrict, ...);
+int fscanf(FILE *restrict, const char *restrict, ...);
+int sscanf(const char *restrict, const char *restrict, ...);
+int vscanf(const char *restrict, __isoc_va_list);
+int vfscanf(FILE *restrict, const char *restrict, __isoc_va_list);
+int vsscanf(const char *restrict, const char *restrict, __isoc_va_list);
+
+void perror(const char *);
+
+int setvbuf(FILE *restrict, char *restrict, int, size_t);
+void setbuf(FILE *restrict, char *restrict);
+
+char *tmpnam(char *);
+FILE *tmpfile(void);
+
+
+
+
+FILE *fmemopen(void *restrict, size_t, const char *restrict);
+FILE *open_memstream(char **, size_t *);
+FILE *fdopen(int, const char *);
+FILE *popen(const char *, const char *);
+int pclose(FILE *);
+int fileno(FILE *);
+int fseeko(FILE *, off_t, int);
+off_t ftello(FILE *);
+int dprintf(int, const char *restrict, ...);
+int vdprintf(int, const char *restrict, __isoc_va_list);
+void flockfile(FILE *);
+int ftrylockfile(FILE *);
+void funlockfile(FILE *);
+int getc_unlocked(FILE *);
+int getchar_unlocked(void);
+int putc_unlocked(int, FILE *);
+int putchar_unlocked(int);
+ssize_t getdelim(char **restrict, size_t *restrict, int, FILE *restrict);
+ssize_t getline(char **restrict, size_t *restrict, FILE *restrict);
+int renameat(int, const char *, int, const char *);
+char *ctermid(char *);
 
 
 
 
 
 
-void PIN_MANAGER_Initialize(void)
+
+char *tempnam(const char *, const char *);
+# 57 "mcc_generated_files/eusart1.h" 2
+# 76 "mcc_generated_files/eusart1.h"
+typedef union {
+    struct {
+        unsigned perr : 1;
+        unsigned ferr : 1;
+        unsigned oerr : 1;
+        unsigned reserved : 5;
+    };
+    uint8_t status;
+}eusart1_status_t;
+# 111 "mcc_generated_files/eusart1.h"
+void EUSART1_Initialize(void);
+# 159 "mcc_generated_files/eusart1.h"
+_Bool EUSART1_is_tx_ready(void);
+# 207 "mcc_generated_files/eusart1.h"
+_Bool EUSART1_is_rx_ready(void);
+# 254 "mcc_generated_files/eusart1.h"
+_Bool EUSART1_is_tx_done(void);
+# 302 "mcc_generated_files/eusart1.h"
+eusart1_status_t EUSART1_get_last_status(void);
+# 322 "mcc_generated_files/eusart1.h"
+uint8_t EUSART1_Read(void);
+# 342 "mcc_generated_files/eusart1.h"
+void EUSART1_Write(uint8_t txData);
+# 362 "mcc_generated_files/eusart1.h"
+void EUSART1_SetFramingErrorHandler(void (* interruptHandler)(void));
+# 380 "mcc_generated_files/eusart1.h"
+void EUSART1_SetOverrunErrorHandler(void (* interruptHandler)(void));
+# 398 "mcc_generated_files/eusart1.h"
+void EUSART1_SetErrorHandler(void (* interruptHandler)(void));
+# 50 "mcc_generated_files/eusart1.c" 2
+
+
+volatile eusart1_status_t eusart1RxLastError;
+
+
+
+
+
+void (*EUSART1_FramingErrorHandler)(void);
+void (*EUSART1_OverrunErrorHandler)(void);
+void (*EUSART1_ErrorHandler)(void);
+
+void EUSART1_DefaultFramingErrorHandler(void);
+void EUSART1_DefaultOverrunErrorHandler(void);
+void EUSART1_DefaultErrorHandler(void);
+
+void EUSART1_Initialize(void)
 {
 
 
 
-    LATA = 0x00;
-    LATB = 0x00;
-    LATC = 0x00;
+    BAUD1CON = 0x08;
 
 
+    RC1STA = 0x90;
 
 
-    TRISA = 0x37;
-    TRISB = 0x70;
-    TRISC = 0xFE;
+    TX1STA = 0x24;
 
 
+    SP1BRGL = 0x19;
 
 
-    ANSELC = 0xFD;
-    ANSELB = 0xD0;
-    ANSELA = 0x37;
+    SP1BRGH = 0x00;
 
 
+    EUSART1_SetFramingErrorHandler(EUSART1_DefaultFramingErrorHandler);
+    EUSART1_SetOverrunErrorHandler(EUSART1_DefaultOverrunErrorHandler);
+    EUSART1_SetErrorHandler(EUSART1_DefaultErrorHandler);
 
+    eusart1RxLastError.status = 0;
 
-    WPUB = 0x00;
-    WPUA = 0x00;
-    WPUC = 0x00;
-
-
-
-
-    ODCONA = 0x00;
-    ODCONB = 0x00;
-    ODCONC = 0x00;
-
-
-
-
-    SLRCONA = 0x1F;
-    SLRCONB = 0x00;
-    SLRCONC = 0x3F;
-
-
-
-
-    INLVLA = 0x3F;
-    INLVLB = 0x00;
-    INLVLC = 0x3F;
-# 113 "mcc_generated_files/pin_manager.c"
-    RC0PPS = 0x11;
-    RB7PPS = 0x0F;
-    RX2DTPPS = 0x11;
-    RX1DTPPS = 0x0D;
 }
 
-void PIN_MANAGER_IOC(void)
+_Bool EUSART1_is_tx_ready(void)
 {
+    return (_Bool)(PIR3bits.TX1IF && TX1STAbits.TXEN);
+}
+
+_Bool EUSART1_is_rx_ready(void)
+{
+    return (_Bool)(PIR3bits.RC1IF);
+}
+
+_Bool EUSART1_is_tx_done(void)
+{
+    return TX1STAbits.TRMT;
+}
+
+eusart1_status_t EUSART1_get_last_status(void){
+    return eusart1RxLastError;
+}
+
+uint8_t EUSART1_Read(void)
+{
+    while(!PIR3bits.RC1IF)
+    {
+    }
+
+    eusart1RxLastError.status = 0;
+
+    if(1 == RC1STAbits.OERR)
+    {
+
+
+        RC1STAbits.CREN = 0;
+        RC1STAbits.CREN = 1;
+    }
+
+    return RC1REG;
+}
+
+void EUSART1_Write(uint8_t txData)
+{
+    while(0 == PIR3bits.TX1IF)
+    {
+    }
+
+    TX1REG = txData;
+}
+
+char getch(void)
+{
+    return EUSART1_Read();
+}
+
+void putch(char txData)
+{
+    EUSART1_Write(txData);
+}
+
+
+
+void EUSART1_DefaultFramingErrorHandler(void){}
+
+void EUSART1_DefaultOverrunErrorHandler(void){
+
+
+    RC1STAbits.CREN = 0;
+    RC1STAbits.CREN = 1;
+
+}
+
+void EUSART1_DefaultErrorHandler(void){
+}
+
+void EUSART1_SetFramingErrorHandler(void (* interruptHandler)(void)){
+    EUSART1_FramingErrorHandler = interruptHandler;
+}
+
+void EUSART1_SetOverrunErrorHandler(void (* interruptHandler)(void)){
+    EUSART1_OverrunErrorHandler = interruptHandler;
+}
+
+void EUSART1_SetErrorHandler(void (* interruptHandler)(void)){
+    EUSART1_ErrorHandler = interruptHandler;
 }
