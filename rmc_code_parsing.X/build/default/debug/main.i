@@ -11927,29 +11927,22 @@ void main(void)
                 "$GPRMC,172125.081,V,,,,,0.00,172.60,120221,,,N,V*3C"
                 "$GPVTG,172.60,T,,M,0.00,N,0.00,K,N*30";
     puts(sentence);
-    char s1[] = "$GPRM";
+    char s1[] = "$GPR";
 
 
 
 
-    int temp_position;
+    int count = 0;
 
     for (int i = 0; i < strlen(s1); i++)
  {
   char *position_ptr = strchr(sentence, s1[i]);
-        if (*position_ptr) {
-            printf("Position Pointer: %c\r\n", *position_ptr);
-            if(!(position_ptr - sentence - 1 == temp_position)){
 
-                break;
-            }
-            temp_position = position_ptr - sentence;
-        }
 
 
 
   int position = (position_ptr == ((void*)0) ? -1 : position_ptr - sentence);
-# 165 "main.c"
+
   printf("%4c: %4d\r\n", s1[i], position);
  }
     while (1) {
@@ -11957,7 +11950,7 @@ void main(void)
         uint16_t read = EUSART1_Read();
         uint8_t Buffer[10];
         parsing(read, Buffer);
-# 210 "main.c"
+# 195 "main.c"
     }
-# 271 "main.c"
+# 256 "main.c"
 }

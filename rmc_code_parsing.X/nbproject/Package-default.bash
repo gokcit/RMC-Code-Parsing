@@ -10,9 +10,9 @@ CND_CONF=default
 CND_DISTDIR=dist
 TMPDIR=build/${CND_CONF}/${IMAGE_TYPE}/tmp-packaging
 TMPDIRNAME=tmp-packaging
-OUTPUT_PATH=dist/${CND_CONF}/${IMAGE_TYPE}/rmc_code_parsing.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
-OUTPUT_BASENAME=rmc_code_parsing.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
-PACKAGE_TOP_DIR=rmccodeparsing.x/
+OUTPUT_PATH=dist/${CND_CONF}/${IMAGE_TYPE}/beginning_and_end_of_the_sentenc.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
+OUTPUT_BASENAME=beginning_and_end_of_the_sentenc.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
+PACKAGE_TOP_DIR=beginningandendofthesentenc.x/
 
 # Functions
 function checkReturnCode
@@ -57,15 +57,15 @@ mkdir -p ${TMPDIR}
 
 # Copy files and create directories and links
 cd "${TOP}"
-makeDirectory ${TMPDIR}/rmccodeparsing.x/bin
+makeDirectory ${TMPDIR}/beginningandendofthesentenc.x/bin
 copyFileToTmpDir "${OUTPUT_PATH}" "${TMPDIR}/${PACKAGE_TOP_DIR}bin/${OUTPUT_BASENAME}" 0755
 
 
 # Generate tar file
 cd "${TOP}"
-rm -f ${CND_DISTDIR}/${CND_CONF}/package/rmccodeparsing.x.tar
+rm -f ${CND_DISTDIR}/${CND_CONF}/package/beginningandendofthesentenc.x.tar
 cd ${TMPDIR}
-tar -vcf ../../../../${CND_DISTDIR}/${CND_CONF}/package/rmccodeparsing.x.tar *
+tar -vcf ../../../../${CND_DISTDIR}/${CND_CONF}/package/beginningandendofthesentenc.x.tar *
 checkReturnCode
 
 # Cleanup

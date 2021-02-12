@@ -3,14 +3,20 @@ Version 4.0 HI-TECH Software Intermediate Code
 "71 ./mcc_generated_files/mcc.h
 [; ;./mcc_generated_files/mcc.h: 71: void SYSTEM_Initialize(void);
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
-"322 ./mcc_generated_files/eusart1.h
-[; ;./mcc_generated_files/eusart1.h: 322: uint8_t EUSART1_Read(void);
-[v _EUSART1_Read `(uc ~T0 @X0 0 ef ]
+"102 C:\Program Files\Microchip\xc8\v2.31\pic\include\c99\stdio.h
+[; ;C:\Program Files\Microchip\xc8\v2.31\pic\include\c99\stdio.h: 102: int puts(const char *);
+[v _puts `(i ~T0 @X0 0 ef1`*Cuc ]
 "45 C:\Program Files\Microchip\xc8\v2.31\pic\include\c99\string.h
 [; ;C:\Program Files\Microchip\xc8\v2.31\pic\include\c99\string.h: 45: char *strchr (const char *, int);
 [v _strchr `(*uc ~T0 @X0 0 ef2`*Cuc`i ]
 "111 C:\Program Files\Microchip\xc8\v2.31\pic\include\c99\stdio.h
 [v _printf `(i ~T0 @X0 0 ev`*Cuc ]
+"54 C:\Program Files\Microchip\xc8\v2.31\pic\include\c99\string.h
+[; ;C:\Program Files\Microchip\xc8\v2.31\pic\include\c99\string.h: 54: size_t strlen (const char *);
+[v _strlen `(ui ~T0 @X0 0 ef1`*Cuc ]
+"322 ./mcc_generated_files/eusart1.h
+[; ;./mcc_generated_files/eusart1.h: 322: uint8_t EUSART1_Read(void);
+[v _EUSART1_Read `(uc ~T0 @X0 0 ef ]
 "111 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f15345.h
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f15345.h: 111: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -983,156 +989,253 @@ Version 4.0 HI-TECH Software Intermediate Code
 "19456
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f15345.h: 19456: __asm("TOSH equ 01FEFh");
 [; <" TOSH equ 01FEFh ;# ">
-"51 main.c
-[; ;main.c: 51: char *ptr[10];
+"52 main.c
+[; ;main.c: 52: char *ptr[10];
 [v _ptr `*uc ~T0 @X0 -> 10 `i e ]
-"60
-[; ;main.c: 60: void parsing(uint16_t Value, uint8_t* Buffer, int char_counter)
-[v _parsing `(v ~T0 @X0 1 ef3`us`*uc`i ]
 "61
-[; ;main.c: 61: {
+[; ;main.c: 61: void parsing(uint16_t Value, uint8_t* Buffer)
+[v _parsing `(v ~T0 @X0 1 ef2`us`*uc ]
+"62
+[; ;main.c: 62: {
 {
 [e :U _parsing ]
-"60
-[; ;main.c: 60: void parsing(uint16_t Value, uint8_t* Buffer, int char_counter)
+"61
+[; ;main.c: 61: void parsing(uint16_t Value, uint8_t* Buffer)
 [v _Value `us ~T0 @X0 1 r1 ]
 [v _Buffer `*uc ~T0 @X0 1 r2 ]
-[v _char_counter `i ~T0 @X0 1 r3 ]
-"61
-[; ;main.c: 61: {
-[f ]
 "62
-[; ;main.c: 62:     uint8_t i;
-[v _i `uc ~T0 @X0 1 a ]
+[; ;main.c: 62: {
+[f ]
 "63
-[; ;main.c: 63:     _Bool Printed = 0;
+[; ;main.c: 63:     uint8_t i;
+[v _i `uc ~T0 @X0 1 a ]
+"64
+[; ;main.c: 64:     _Bool Printed = 0;
 [v _Printed `a ~T0 @X0 1 a ]
 [e = _Printed -> -> 0 `i `a ]
-"65
-[; ;main.c: 65:     if(Value)
-[e $ ! != -> _Value `ui -> -> 0 `i `ui 917  ]
 "66
-[; ;main.c: 66:     {
-{
+[; ;main.c: 66:     if(Value)
+[e $ ! != -> _Value `ui -> -> 0 `i `ui 917  ]
 "67
-[; ;main.c: 67:         *Buffer++ = Value;
-[e = *U ++ _Buffer * -> -> 1 `i `x -> -> # *U _Buffer `i `x -> _Value `uc ]
-"68
-[; ;main.c: 68:         Printed = 1;
-[e = _Printed -> -> 1 `i `a ]
-"80
-[; ;main.c: 80:     }
-}
-[e $U 918  ]
-"81
-[; ;main.c: 81:     else
-[e :U 917 ]
-"82
-[; ;main.c: 82:     {
+[; ;main.c: 67:     {
 {
-"83
-[; ;main.c: 83:         *Buffer++ = '0';
-[e = *U ++ _Buffer * -> -> 1 `i `x -> -> # *U _Buffer `i `x -> -> 48 `ui `uc ]
-"84
-[; ;main.c: 84:     }
+"68
+[; ;main.c: 68:         *Buffer++ = Value;
+[e = *U ++ _Buffer * -> -> 1 `i `x -> -> # *U _Buffer `i `x -> _Value `uc ]
+"69
+[; ;main.c: 69:         Printed = 1;
+[e = _Printed -> -> 1 `i `a ]
+"72
+[; ;main.c: 72:     }
 }
-[e :U 918 ]
-"86
-[; ;main.c: 86:     *Buffer = '\0';
+[e :U 917 ]
+"78
+[; ;main.c: 78:     *Buffer = '\0';
 [e = *U _Buffer -> -> 0 `ui `uc ]
-"87
-[; ;main.c: 87: }
+"79
+[; ;main.c: 79: }
 [e :UE 916 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"99
-[; ;main.c: 99: void main(void)
+"91
+[; ;main.c: 91: void main(void)
 [v _main `(v ~T0 @X0 1 ef ]
-"100
-[; ;main.c: 100: {
+"92
+[; ;main.c: 92: {
 {
 [e :U _main ]
 [f ]
-"102
-[; ;main.c: 102:     SYSTEM_Initialize();
+"94
+[; ;main.c: 94:     SYSTEM_Initialize();
 [e ( _SYSTEM_Initialize ..  ]
-"119
-[; ;main.c: 119:     int i = 0;
+[v F7307 `uc ~T0 @X0 -> 80 `i s ]
+[i F7307
+:U ..
+"111
+[; ;main.c: 111:     char sentence[80] = "17,0*6A"
+-> 49 `c
+-> 55 `c
+-> 44 `c
+-> 48 `c
+-> 42 `c
+-> 54 `c
+-> 65 `c
+-> 36 `c
+-> 71 `c
+-> 80 `c
+-> 84 `c
+-> 88 `c
+-> 84 `c
+-> 44 `c
+-> 48 `c
+-> 49 `c
+-> 44 `c
+-> 48 `c
+-> 49 `c
+-> 44 `c
+-> 48 `c
+-> 50 `c
+-> 44 `c
+-> 65 `c
+-> 78 `c
+-> 84 `c
+-> 83 `c
+-> 84 `c
+-> 65 `c
+-> 84 `c
+-> 85 `c
+-> 83 `c
+-> 61 `c
+-> 79 `c
+-> 80 `c
+-> 69 `c
+-> 78 `c
+-> 42 `c
+-> 50 `c
+-> 66 `c
+-> 49 `c
+-> 55 `c
+-> 44 `c
+-> 48 `c
+-> 42 `c
+-> 54 `c
+-> 65 `c
+-> 36 `c
+-> 71 `c
+-> 80 `c
+-> 82 `c
+-> 77 `c
+-> 67 `c
+-> 44 `c
+-> 49 `c
+-> 55 `c
+-> 50 `c
+-> 49 `c
+-> 49 `c
+-> 56 `c
+-> 46 `c
+-> 48 `c
+-> 56 `c
+-> 49 `c
+-> 44 `c
+-> 86 `c
+-> 44 `c
+-> 44 `c
+-> 44 `c
+-> 44 `c
+-> 44 `c
+-> 48 `c
+-> 46 `c
+-> 48 `c
+-> 48 `c
+-> 44 `c
+-> 49 `c
+-> 55 `c
+-> 50 `c
+-> 46 `c
+..
+]
+[v _sentence `uc ~T0 @X0 -> 80 `i a ]
+[e = _sentence F7307 ]
+"133
+[; ;main.c: 133:     puts(sentence);
+[e ( _puts (1 -> &U _sentence `*Cuc ]
+[v F7309 `uc ~T0 @X0 -> 6 `i s ]
+[i F7309
+:U ..
+"134
+[; ;main.c: 134:     char s1[] = "$GPRM";
+-> 36 `c
+-> 71 `c
+-> 80 `c
+-> 82 `c
+-> 77 `c
+-> 0 `c
+..
+]
+[v _s1 `uc ~T0 @X0 -> 6 `i a ]
+[e = _s1 F7309 ]
+"139
+[; ;main.c: 139:     int temp_position;
+[v _temp_position `i ~T0 @X0 1 a ]
+"141
+[; ;main.c: 141:     for (int i = 0; i < strlen(s1); i++)
+{
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
-"120
-[; ;main.c: 120:     int char_counter = 0;
-[v _char_counter `i ~T0 @X0 1 a ]
-[e = _char_counter -> 0 `i ]
-"121
-[; ;main.c: 121:     _Bool word_is_read = 0;
-[v _word_is_read `a ~T0 @X0 1 a ]
-[e = _word_is_read -> -> 0 `i `a ]
-"123
-[; ;main.c: 123:     uint8_t Buffer[10];
-[v _Buffer `uc ~T0 @X0 -> 10 `i a ]
-"124
-[; ;main.c: 124:     while (1){
-[e :U 921 ]
+[e $U 922  ]
+[e :U 919 ]
+"142
+[; ;main.c: 142:  {
 {
-"127
-[; ;main.c: 127:         if(word_is_read){
-[e $ ! != -> _word_is_read `i -> 0 `i 923  ]
+"143
+[; ;main.c: 143:   char *position_ptr = strchr(sentence, s1[i]);
+[v _position_ptr `*uc ~T0 @X0 1 a ]
+[e = _position_ptr ( _strchr (2 , -> &U _sentence `*Cuc -> *U + &U _s1 * -> -> _i `ui `ux -> -> # *U &U _s1 `ui `ux `i ]
+"144
+[; ;main.c: 144:         if (*position_ptr) {
+[e $ ! != -> *U _position_ptr `i -> 0 `i 923  ]
 {
-"129
-[; ;main.c: 129:         }
-}
-[e $U 924  ]
-"130
-[; ;main.c: 130:         else{
-[e :U 923 ]
+"145
+[; ;main.c: 145:             printf("Position Pointer: %c\r\n", *position_ptr);
+[e ( _printf , (. :s 1C -> *U _position_ptr `i ]
+"146
+[; ;main.c: 146:             if(!(position_ptr - sentence - 1 == temp_position)){
+[e $ ! ! == - / - -> _position_ptr `x -> &U _sentence `x -> -> # *U _position_ptr `i `x -> 1 `i _temp_position 924  ]
 {
-"131
-[; ;main.c: 131:             uint16_t read = EUSART1_Read();
-[v _read `us ~T0 @X0 1 a ]
-[e = _read -> ( _EUSART1_Read ..  `us ]
-"132
-[; ;main.c: 132:             parsing(read, Buffer, char_counter);
-[e ( _parsing (3 , , _read &U _Buffer _char_counter ]
-"133
-[; ;main.c: 133:             word_is_read = 1;
-[e = _word_is_read -> -> 1 `i `a ]
-"134
-[; ;main.c: 134:         }
+"148
+[; ;main.c: 148:                 break;
+[e $U 920  ]
+"149
+[; ;main.c: 149:             }
 }
 [e :U 924 ]
-"138
-[; ;main.c: 138:         if(*strchr(Buffer, '\n') == '\n'){
-[e $ ! == -> *U ( _strchr (2 , -> &U _Buffer `*Cuc -> -> 10 `ui `i `ui -> 10 `ui 925  ]
-{
-"140
-[; ;main.c: 140:             printf("The end.\r\n");
-[e ( _printf :s 1C ]
+"150
+[; ;main.c: 150:             temp_position = position_ptr - sentence;
+[e = _temp_position / - -> _position_ptr `x -> &U _sentence `x -> -> # *U _position_ptr `i `x ]
 "151
 [; ;main.c: 151:         }
 }
-[e :U 925 ]
-"152
-[; ;main.c: 152:         if(*strchr(Buffer, '$') == '$'){
-[e $ ! == -> *U ( _strchr (2 , -> &U _Buffer `*Cuc -> -> 36 `ui `i `ui -> 36 `ui 926  ]
-{
-"153
-[; ;main.c: 153:             printf("This is a valid sentence that starts with: %c!\r\n", *strchr(Buffer, '$'));
-[e ( _printf , (. :s 2C -> *U ( _strchr (2 , -> &U _Buffer `*Cuc -> -> 36 `ui `i `i ]
-"154
-[; ;main.c: 154:         }
+[e :U 923 ]
+"155
+[; ;main.c: 155:   int position = (position_ptr == ((void*)0) ? -1 : position_ptr - sentence);
+[v _position `i ~T0 @X0 1 a ]
+[e = _position ? == _position_ptr -> -> -> 0 `i `*v `*uc : -U -> 1 `i / - -> _position_ptr `x -> &U _sentence `x -> -> # *U _position_ptr `i `x ]
+"165
+[; ;main.c: 165:   printf("%4c: %4d\r\n", s1[i], position);
+[e ( _printf , , (. :s 2C -> *U + &U _s1 * -> -> _i `ui `ux -> -> # *U &U _s1 `ui `ux `i _position ]
+"166
+[; ;main.c: 166:  }
 }
-[e :U 926 ]
-"171
-[; ;main.c: 171:     }
-}
-[e :U 920 ]
-[e $U 921  ]
+[e ++ _i -> 1 `i ]
 [e :U 922 ]
-"172
-[; ;main.c: 172: }
-[e :UE 919 ]
+[e $ < -> _i `ui ( _strlen (1 -> &U _s1 `*Cuc 919  ]
+[e :U 920 ]
 }
-[p f _printf 8912896 ]
-[a 1C 84 104 101 32 101 110 100 46 13 10 0 ]
-[a 2C 84 104 105 115 32 105 115 32 97 32 118 97 108 105 100 32 115 101 110 116 101 110 99 101 32 116 104 97 116 32 115 116 97 114 116 115 32 119 105 116 104 58 32 37 99 33 13 10 0 ]
+"167
+[; ;main.c: 167:     while (1) {
+[e :U 926 ]
+{
+"169
+[; ;main.c: 169:         uint16_t read = EUSART1_Read();
+[v _read `us ~T0 @X0 1 a ]
+[e = _read -> ( _EUSART1_Read ..  `us ]
+"170
+[; ;main.c: 170:         uint8_t Buffer[10];
+[v _Buffer `uc ~T0 @X0 -> 10 `i a ]
+"171
+[; ;main.c: 171:         parsing(read, Buffer);
+[e ( _parsing (2 , _read &U _Buffer ]
+"210
+[; ;main.c: 210:     }
+}
+[e :U 925 ]
+[e $U 926  ]
+[e :U 927 ]
+"271
+[; ;main.c: 271: }
+[e :UE 918 ]
+}
+[p f _printf 8945792 ]
+[a 2C 37 52 99 58 32 37 52 100 13 10 0 ]
+[a 1C 80 111 115 105 116 105 111 110 32 80 111 105 110 116 101 114 58 32 37 99 13 10 0 ]

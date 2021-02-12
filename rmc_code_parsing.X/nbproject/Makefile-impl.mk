@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=rmc_code_parsing.X
+PROJECTNAME=beginning_and_end_of_the_sentenc.X
 
 # Active Configuration
 DEFAULTCONF=default
