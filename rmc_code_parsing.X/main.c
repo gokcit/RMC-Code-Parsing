@@ -118,17 +118,26 @@ void main(void)
     
     int i = 0;
     int char_counter = 0;
-    bool flag = true;
+    bool word_is_read = false;
     // Test line
+    uint8_t Buffer[10];
     while (1){
         
         // Add your application code
-        uint16_t read = EUSART1_Read();
-        uint8_t Buffer[10];
-        parsing(read, Buffer, char_counter);
+        if(word_is_read){
+            
+        }
+        else{
+            uint16_t read = EUSART1_Read(); 
+            parsing(read, Buffer, char_counter);
+            word_is_read = true;
+        }
+        
+        
         //printf(Buffer);
-//        if(*strchr(Buffer, '\n') == '\n'){
-//            printf("The end.");
+        if(*strchr(Buffer, '\n') == '\n'){
+            //printf("The end. %c", *strchr(Buffer, '\n'));
+            printf("The end.\r\n");
 //            //flag = false;
 //            PIE3bits.RC1IE = 1;
 //            PIE3bits.TX1IE = 1;
@@ -139,7 +148,7 @@ void main(void)
 ////            TX2STAbits.TXEN = 1;
 ////            PIR3bits.TX2IF = 1;
 //            
-//        }
+        }
         if(*strchr(Buffer, '$') == '$'){
             printf("This is a valid sentence that starts with: %c!\r\n", *strchr(Buffer, '$'));
         }

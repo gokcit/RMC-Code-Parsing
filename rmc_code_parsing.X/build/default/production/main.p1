@@ -1,10 +1,10 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [p mainexit ]
-"72 ./mcc_generated_files/mcc.h
-[; ;./mcc_generated_files/mcc.h: 72: void SYSTEM_Initialize(void);
+"71 ./mcc_generated_files/mcc.h
+[; ;./mcc_generated_files/mcc.h: 71: void SYSTEM_Initialize(void);
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
-"329 ./mcc_generated_files/eusart1.h
-[; ;./mcc_generated_files/eusart1.h: 329: uint8_t EUSART1_Read(void);
+"322 ./mcc_generated_files/eusart1.h
+[; ;./mcc_generated_files/eusart1.h: 322: uint8_t EUSART1_Read(void);
 [v _EUSART1_Read `(uc ~T0 @X0 0 ef ]
 "45 C:\Program Files\Microchip\xc8\v2.31\pic\include\c99\string.h
 [; ;C:\Program Files\Microchip\xc8\v2.31\pic\include\c99\string.h: 45: char *strchr (const char *, int);
@@ -1065,43 +1065,74 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _char_counter `i ~T0 @X0 1 a ]
 [e = _char_counter -> 0 `i ]
 "121
-[; ;main.c: 121:     _Bool flag = 1;
-[v _flag `a ~T0 @X0 1 a ]
-[e = _flag -> -> 1 `i `a ]
+[; ;main.c: 121:     _Bool word_is_read = 0;
+[v _word_is_read `a ~T0 @X0 1 a ]
+[e = _word_is_read -> -> 0 `i `a ]
 "123
-[; ;main.c: 123:     while (1){
+[; ;main.c: 123:     uint8_t Buffer[10];
+[v _Buffer `uc ~T0 @X0 -> 10 `i a ]
+"124
+[; ;main.c: 124:     while (1){
 [e :U 921 ]
 {
-"126
-[; ;main.c: 126:         uint16_t read = EUSART1_Read();
+"127
+[; ;main.c: 127:         if(word_is_read){
+[e $ ! != -> _word_is_read `i -> 0 `i 923  ]
+{
+"129
+[; ;main.c: 129:         }
+}
+[e $U 924  ]
+"130
+[; ;main.c: 130:         else{
+[e :U 923 ]
+{
+"131
+[; ;main.c: 131:             uint16_t read = EUSART1_Read();
 [v _read `us ~T0 @X0 1 a ]
 [e = _read -> ( _EUSART1_Read ..  `us ]
-"127
-[; ;main.c: 127:         uint8_t Buffer[10];
-[v _Buffer `uc ~T0 @X0 -> 10 `i a ]
-"128
-[; ;main.c: 128:         parsing(read, Buffer, char_counter);
+"132
+[; ;main.c: 132:             parsing(read, Buffer, char_counter);
 [e ( _parsing (3 , , _read &U _Buffer _char_counter ]
-"143
-[; ;main.c: 143:         if(*strchr(Buffer, '$') == '$'){
-[e $ ! == -> *U ( _strchr (2 , -> &U _Buffer `*Cuc -> -> 36 `ui `i `ui -> 36 `ui 923  ]
-{
-"144
-[; ;main.c: 144:             printf("This is a valid sentence that starts with: %c!\r\n", *strchr(Buffer, '$'));
-[e ( _printf , (. :s 1C -> *U ( _strchr (2 , -> &U _Buffer `*Cuc -> -> 36 `ui `i `i ]
-"145
-[; ;main.c: 145:         }
+"133
+[; ;main.c: 133:             word_is_read = 1;
+[e = _word_is_read -> -> 1 `i `a ]
+"134
+[; ;main.c: 134:         }
 }
-[e :U 923 ]
-"162
-[; ;main.c: 162:     }
+[e :U 924 ]
+"138
+[; ;main.c: 138:         if(*strchr(Buffer, '\n') == '\n'){
+[e $ ! == -> *U ( _strchr (2 , -> &U _Buffer `*Cuc -> -> 10 `ui `i `ui -> 10 `ui 925  ]
+{
+"140
+[; ;main.c: 140:             printf("The end.\r\n");
+[e ( _printf :s 1C ]
+"151
+[; ;main.c: 151:         }
+}
+[e :U 925 ]
+"152
+[; ;main.c: 152:         if(*strchr(Buffer, '$') == '$'){
+[e $ ! == -> *U ( _strchr (2 , -> &U _Buffer `*Cuc -> -> 36 `ui `i `ui -> 36 `ui 926  ]
+{
+"153
+[; ;main.c: 153:             printf("This is a valid sentence that starts with: %c!\r\n", *strchr(Buffer, '$'));
+[e ( _printf , (. :s 2C -> *U ( _strchr (2 , -> &U _Buffer `*Cuc -> -> 36 `ui `i `i ]
+"154
+[; ;main.c: 154:         }
+}
+[e :U 926 ]
+"171
+[; ;main.c: 171:     }
 }
 [e :U 920 ]
 [e $U 921  ]
 [e :U 922 ]
-"163
-[; ;main.c: 163: }
+"172
+[; ;main.c: 172: }
 [e :UE 919 ]
 }
 [p f _printf 8912896 ]
-[a 1C 84 104 105 115 32 105 115 32 97 32 118 97 108 105 100 32 115 101 110 116 101 110 99 101 32 116 104 97 116 32 115 116 97 114 116 115 32 119 105 116 104 58 32 37 99 33 13 10 0 ]
+[a 1C 84 104 101 32 101 110 100 46 13 10 0 ]
+[a 2C 84 104 105 115 32 105 115 32 97 32 118 97 108 105 100 32 115 101 110 116 101 110 99 101 32 116 104 97 116 32 115 116 97 114 116 115 32 119 105 116 104 58 32 37 99 33 13 10 0 ]
