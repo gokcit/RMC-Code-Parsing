@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files\Microchip\xc8\v2.31\pic\dat\en_msgs.txt -cn \
   -h+dist/default/production\rmc_code_parsing.X.production.sym \
   --cmf=dist/default/production\rmc_code_parsing.X.production.cmf -z \
-  -Q16F15345 -oC:\Users\C63576\AppData\Local\Temp\scmg.2 \
+  -Q16F15345 -oC:\Users\C63576\AppData\Local\Temp\sips.3 \
   --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/rmc_code_parsing.X.production.map -E1 \
   -ver=XC8 Compiler --acfsm=1493 -ASTACK=0207Ch-023EFh -pstack=STACK \
@@ -42,7 +42,7 @@ Linker command line:
   -ACONFIG=08007h-0800Bh -DCONFIG=2 -AIDLOC=08000h-08003h -DIDLOC=2 \
   -DCODE=2 -DSTRCODE=2 -DSTRING=2 -DCONST=2 -DENTRY=2 \
   -preset_vec=00h,intentry,init,end_init -ppowerup=CODE -pcinit=CODE \
-  -pfunctab=ENTRY -k C:\Users\C63576\AppData\Local\Temp\scmg.o \
+  -pfunctab=ENTRY -k C:\Users\C63576\AppData\Local\Temp\sips.o \
   dist/default/production\rmc_code_parsing.X.production.o 
 
 Object code version is 3.11
@@ -52,7 +52,7 @@ Machine type is 16F15345
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\C63576\AppData\Local\Temp\scmg.o
+C:\Users\C63576\AppData\Local\Temp\sips.o
                 end_init                              2        2        2        0       0
                 reset_vec                             0        0        2        0       0
                 config                             8007     8007        5        0       4
