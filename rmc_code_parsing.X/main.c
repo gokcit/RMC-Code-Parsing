@@ -44,6 +44,7 @@
 #include "mcc_generated_files/mcc.h"
 #include <stdio.h>
 #include <string.h>
+#include <stdbool.h>
 
 #define MAXLEN 10 // This will be the size of the buffer
 
@@ -117,6 +118,7 @@ void main(void)
     
     int i = 0;
     int char_counter = 0;
+    bool flag = true;
     // Test line
     while (1){
         
@@ -125,10 +127,19 @@ void main(void)
         uint8_t Buffer[10];
         parsing(read, Buffer, char_counter);
         //printf(Buffer);
-        if(*strchr(Buffer, '\n') == '\n'){
-            printf("The end.");
-            break;
-        }
+//        if(*strchr(Buffer, '\n') == '\n'){
+//            printf("The end.");
+//            //flag = false;
+//            PIE3bits.RC1IE = 1;
+//            PIE3bits.TX1IE = 1;
+//            PIR3bits.RC2IF = 1;
+//            PIR3bits.TX2IF = 1;
+//            //printf("%s", Buffer);
+//            //break;
+////            TX2STAbits.TXEN = 1;
+////            PIR3bits.TX2IF = 1;
+//            
+//        }
         if(*strchr(Buffer, '$') == '$'){
             printf("This is a valid sentence that starts with: %c!\r\n", *strchr(Buffer, '$'));
         }

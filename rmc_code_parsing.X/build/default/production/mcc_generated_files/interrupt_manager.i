@@ -1,4 +1,4 @@
-# 1 "main.c"
+# 1 "mcc_generated_files/interrupt_manager.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,10 +6,13 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "main.c" 2
-# 44 "main.c"
-# 1 "./mcc_generated_files/mcc.h" 1
-# 49 "./mcc_generated_files/mcc.h"
+# 1 "mcc_generated_files/interrupt_manager.c" 2
+# 49 "mcc_generated_files/interrupt_manager.c"
+# 1 "mcc_generated_files/interrupt_manager.h" 1
+# 49 "mcc_generated_files/interrupt_manager.c" 2
+
+# 1 "mcc_generated_files/mcc.h" 1
+# 49 "mcc_generated_files/mcc.h"
 # 1 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -11545,21 +11548,21 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\\pic\\include\\xc.h" 2 3
-# 49 "./mcc_generated_files/mcc.h" 2
+# 49 "mcc_generated_files/mcc.h" 2
 
-# 1 "./mcc_generated_files/device_config.h" 1
-# 50 "./mcc_generated_files/mcc.h" 2
+# 1 "mcc_generated_files/device_config.h" 1
+# 50 "mcc_generated_files/mcc.h" 2
 
-# 1 "./mcc_generated_files/pin_manager.h" 1
-# 126 "./mcc_generated_files/pin_manager.h"
+# 1 "mcc_generated_files/pin_manager.h" 1
+# 126 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 138 "./mcc_generated_files/pin_manager.h"
+# 138 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
-# 51 "./mcc_generated_files/mcc.h" 2
+# 51 "mcc_generated_files/mcc.h" 2
 
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdbool.h" 1 3
-# 53 "./mcc_generated_files/mcc.h" 2
+# 53 "mcc_generated_files/mcc.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\conio.h" 1 3
 
@@ -11592,13 +11595,11 @@ extern __bit kbhit(void);
 
 extern char * cgets(char *);
 extern void cputs(const char *);
-# 54 "./mcc_generated_files/mcc.h" 2
+# 54 "mcc_generated_files/mcc.h" 2
 
-# 1 "./mcc_generated_files/interrupt_manager.h" 1
-# 55 "./mcc_generated_files/mcc.h" 2
 
-# 1 "./mcc_generated_files/eusart1.h" 1
-# 57 "./mcc_generated_files/eusart1.h"
+# 1 "mcc_generated_files/eusart1.h" 1
+# 57 "mcc_generated_files/eusart1.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdio.h" 1 3
 # 24 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdio.h" 3
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 1 3
@@ -11737,8 +11738,8 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 57 "./mcc_generated_files/eusart1.h" 2
-# 76 "./mcc_generated_files/eusart1.h"
+# 57 "mcc_generated_files/eusart1.h" 2
+# 76 "mcc_generated_files/eusart1.h"
 typedef union {
     struct {
         unsigned perr : 1;
@@ -11760,40 +11761,40 @@ extern volatile uint8_t eusart1RxCount;
 
 extern void (*EUSART1_TxDefaultInterruptHandler)(void);
 extern void (*EUSART1_RxDefaultInterruptHandler)(void);
-# 118 "./mcc_generated_files/eusart1.h"
+# 118 "mcc_generated_files/eusart1.h"
 void EUSART1_Initialize(void);
-# 166 "./mcc_generated_files/eusart1.h"
+# 166 "mcc_generated_files/eusart1.h"
 _Bool EUSART1_is_tx_ready(void);
-# 214 "./mcc_generated_files/eusart1.h"
+# 214 "mcc_generated_files/eusart1.h"
 _Bool EUSART1_is_rx_ready(void);
-# 261 "./mcc_generated_files/eusart1.h"
+# 261 "mcc_generated_files/eusart1.h"
 _Bool EUSART1_is_tx_done(void);
-# 309 "./mcc_generated_files/eusart1.h"
+# 309 "mcc_generated_files/eusart1.h"
 eusart1_status_t EUSART1_get_last_status(void);
-# 329 "./mcc_generated_files/eusart1.h"
+# 329 "mcc_generated_files/eusart1.h"
 uint8_t EUSART1_Read(void);
-# 349 "./mcc_generated_files/eusart1.h"
+# 349 "mcc_generated_files/eusart1.h"
 void EUSART1_Write(uint8_t txData);
-# 370 "./mcc_generated_files/eusart1.h"
+# 370 "mcc_generated_files/eusart1.h"
 void EUSART1_Transmit_ISR(void);
-# 391 "./mcc_generated_files/eusart1.h"
+# 391 "mcc_generated_files/eusart1.h"
 void EUSART1_Receive_ISR(void);
-# 412 "./mcc_generated_files/eusart1.h"
+# 412 "mcc_generated_files/eusart1.h"
 void EUSART1_RxDataHandler(void);
-# 430 "./mcc_generated_files/eusart1.h"
+# 430 "mcc_generated_files/eusart1.h"
 void EUSART1_SetFramingErrorHandler(void (* interruptHandler)(void));
-# 448 "./mcc_generated_files/eusart1.h"
+# 448 "mcc_generated_files/eusart1.h"
 void EUSART1_SetOverrunErrorHandler(void (* interruptHandler)(void));
-# 466 "./mcc_generated_files/eusart1.h"
+# 466 "mcc_generated_files/eusart1.h"
 void EUSART1_SetErrorHandler(void (* interruptHandler)(void));
-# 486 "./mcc_generated_files/eusart1.h"
+# 486 "mcc_generated_files/eusart1.h"
 void EUSART1_SetTxInterruptHandler(void (* interruptHandler)(void));
-# 506 "./mcc_generated_files/eusart1.h"
+# 506 "mcc_generated_files/eusart1.h"
 void EUSART1_SetRxInterruptHandler(void (* interruptHandler)(void));
-# 56 "./mcc_generated_files/mcc.h" 2
+# 56 "mcc_generated_files/mcc.h" 2
 
-# 1 "./mcc_generated_files/eusart2.h" 1
-# 75 "./mcc_generated_files/eusart2.h"
+# 1 "mcc_generated_files/eusart2.h" 1
+# 75 "mcc_generated_files/eusart2.h"
 typedef union {
     struct {
         unsigned perr : 1;
@@ -11803,144 +11804,56 @@ typedef union {
     };
     uint8_t status;
 }eusart2_status_t;
-# 110 "./mcc_generated_files/eusart2.h"
+# 110 "mcc_generated_files/eusart2.h"
 void EUSART2_Initialize(void);
-# 158 "./mcc_generated_files/eusart2.h"
+# 158 "mcc_generated_files/eusart2.h"
 _Bool EUSART2_is_tx_ready(void);
-# 206 "./mcc_generated_files/eusart2.h"
+# 206 "mcc_generated_files/eusart2.h"
 _Bool EUSART2_is_rx_ready(void);
-# 253 "./mcc_generated_files/eusart2.h"
+# 253 "mcc_generated_files/eusart2.h"
 _Bool EUSART2_is_tx_done(void);
-# 301 "./mcc_generated_files/eusart2.h"
+# 301 "mcc_generated_files/eusart2.h"
 eusart2_status_t EUSART2_get_last_status(void);
-# 321 "./mcc_generated_files/eusart2.h"
+# 321 "mcc_generated_files/eusart2.h"
 uint8_t EUSART2_Read(void);
-# 341 "./mcc_generated_files/eusart2.h"
+# 341 "mcc_generated_files/eusart2.h"
 void EUSART2_Write(uint8_t txData);
-# 361 "./mcc_generated_files/eusart2.h"
+# 361 "mcc_generated_files/eusart2.h"
 void EUSART2_SetFramingErrorHandler(void (* interruptHandler)(void));
-# 379 "./mcc_generated_files/eusart2.h"
+# 379 "mcc_generated_files/eusart2.h"
 void EUSART2_SetOverrunErrorHandler(void (* interruptHandler)(void));
-# 397 "./mcc_generated_files/eusart2.h"
+# 397 "mcc_generated_files/eusart2.h"
 void EUSART2_SetErrorHandler(void (* interruptHandler)(void));
-# 57 "./mcc_generated_files/mcc.h" 2
-# 72 "./mcc_generated_files/mcc.h"
+# 57 "mcc_generated_files/mcc.h" 2
+# 72 "mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
-# 85 "./mcc_generated_files/mcc.h"
+# 85 "mcc_generated_files/mcc.h"
 void OSCILLATOR_Initialize(void);
-# 98 "./mcc_generated_files/mcc.h"
+# 98 "mcc_generated_files/mcc.h"
 void PMD_Initialize(void);
-# 44 "main.c" 2
+# 50 "mcc_generated_files/interrupt_manager.c" 2
 
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\string.h" 1 3
-# 25 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\string.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 411 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef struct __locale_struct * locale_t;
-# 25 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\string.h" 2 3
-
-
-void *memcpy (void *restrict, const void *restrict, size_t);
-void *memmove (void *, const void *, size_t);
-void *memset (void *, int, size_t);
-int memcmp (const void *, const void *, size_t);
-void *memchr (const void *, int, size_t);
-
-char *strcpy (char *restrict, const char *restrict);
-char *strncpy (char *restrict, const char *restrict, size_t);
-
-char *strcat (char *restrict, const char *restrict);
-char *strncat (char *restrict, const char *restrict, size_t);
-
-int strcmp (const char *, const char *);
-int strncmp (const char *, const char *, size_t);
-
-int strcoll (const char *, const char *);
-size_t strxfrm (char *restrict, const char *restrict, size_t);
-
-char *strchr (const char *, int);
-char *strrchr (const char *, int);
-
-size_t strcspn (const char *, const char *);
-size_t strspn (const char *, const char *);
-char *strpbrk (const char *, const char *);
-char *strstr (const char *, const char *);
-char *strtok (char *restrict, const char *restrict);
-
-size_t strlen (const char *);
-
-char *strerror (int);
-# 65 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\string.h" 3
-char *strtok_r (char *restrict, const char *restrict, char **restrict);
-int strerror_r (int, char *, size_t);
-char *stpcpy(char *restrict, const char *restrict);
-char *stpncpy(char *restrict, const char *restrict, size_t);
-size_t strnlen (const char *, size_t);
-char *strdup (const char *);
-char *strndup (const char *, size_t);
-char *strsignal(int);
-char *strerror_l (int, locale_t);
-int strcoll_l (const char *, const char *, locale_t);
-size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
-
-
-
-
-void *memccpy (void *restrict, const void *restrict, int, size_t);
-# 46 "main.c" 2
-
-
-
-
-
-char *ptr[10];
-
-int readBuffer(char *ptr[], int nth);
-
-
-
-
-
-
-void parsing(uint16_t Value, uint8_t* Buffer, int char_counter)
+void __attribute__((picinterrupt(("")))) INTERRUPT_InterruptManager (void)
 {
-    uint8_t i;
-    _Bool Printed = 0;
 
-    if(Value)
+    if(INTCONbits.PEIE == 1)
     {
-        *Buffer++ = Value;
-        Printed = 1;
-# 80 "main.c"
+        if(PIE3bits.TX1IE == 1 && PIR3bits.TX1IF == 1)
+        {
+            EUSART1_TxDefaultInterruptHandler();
+        }
+        else if(PIE3bits.RC1IE == 1 && PIR3bits.RC1IF == 1)
+        {
+            EUSART1_RxDefaultInterruptHandler();
+        }
+        else
+        {
+
+        }
     }
     else
     {
-        *Buffer++ = '0';
-    }
 
-    *Buffer = '\0';
-}
-# 99 "main.c"
-void main(void)
-{
-
-    SYSTEM_Initialize();
-# 119 "main.c"
-    int i = 0;
-    int char_counter = 0;
-    _Bool flag = 1;
-
-    while (1){
-
-
-        uint16_t read = EUSART1_Read();
-        uint8_t Buffer[10];
-        parsing(read, Buffer, char_counter);
-# 143 "main.c"
-        if(*strchr(Buffer, '$') == '$'){
-            printf("This is a valid sentence that starts with: %c!\r\n", *strchr(Buffer, '$'));
-        }
-# 162 "main.c"
     }
 }
